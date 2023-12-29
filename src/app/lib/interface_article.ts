@@ -5,6 +5,7 @@ export interface Article {
     current: string;
   };
   _createdAt: string;
+  photo: string;
   content: any;
   time_reading: string;
   authors: string[];

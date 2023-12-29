@@ -1,7 +1,7 @@
 export default {
-  name: 'actuality',
+  name: 'price_list',
   type: 'document',
-  title: 'Aktuality',
+  title: 'Cenník',
   fields: [
     {
       name: 'title',
@@ -13,7 +13,7 @@ export default {
       type: 'slug',
       title: 'Slug',
       options: {
-        source: 'nadpis',
+        source: 'title',
       },
     },
     {

@@ -13,7 +13,7 @@ export default {
       type: 'slug',
       title: 'Slug',
       options: {
-        source: 'nadpis',
+        source: 'title',
       },
     },
     {

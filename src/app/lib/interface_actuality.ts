@@ -1,5 +1,3 @@
-import { StringLiteral } from "typescript";
-
 export interface Actulity {
   title: string;
   _id: string;

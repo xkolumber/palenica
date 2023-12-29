@@ -1,7 +1,7 @@
 export default {
-  name: 'actuality',
+  name: 'article',
   type: 'document',
-  title: 'Aktuality',
+  title: 'Článok',
   fields: [
     {
       name: 'title',
@@ -13,7 +13,15 @@ export default {
       type: 'slug',
       title: 'Slug',
       options: {
-        source: 'nadpis',
+        source: 'title',
+      },
+    },
+    {
+      name: 'photo',
+      type: 'image',
+      title: 'Titulná fotka',
+      options: {
+        hotspot: true,
       },
     },
     {
