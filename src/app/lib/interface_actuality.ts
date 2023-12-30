@@ -1,4 +1,4 @@
-export interface Actulity {
+export interface Actuality {
   title: string;
   _id: string;
   slug: {
