@@ -1,29 +1,14 @@
 import { Article } from "@/app/lib/interface_article";
-import { client } from "@/app/lib/sanity";
 import { urlFor } from "@/app/lib/sanityImageUrl";
 import AllArticles from "@/components/AllArticles";
 import AlmostEnd from "@/components/AlmostEnd";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import { PortableText } from "@portabletext/react";
-import Image from "next/image";
+import { getData } from "./page";
 
-async function getData(slug: string) {
-  const query = `*[_type == "article" && slug.current =="${slug}"][0]`;
-  const data = await client.fetch(query);
-  return data;
-}
-
-const Page = async ({ params }: { params: { slug: string } }) => {
+export const Page = async ({ params }: { params: { slug: string } }) => {
   const data = (await getData(params.slug)) as Article;
 
-  const date = new Date(data._createdAt);
-
-  const day = date.getDate().toString().padStart(2, "0");
-  const month = (date.getMonth() + 1).toString().padStart(2, "0");
-  const year = date.getFullYear();
-
-  const formattedDate = `${day}.${month}.${year}`;
   return (
     <>
       <div className="cerveny_container">
@@ -44,27 +29,28 @@ const Page = async ({ params }: { params: { slug: string } }) => {
             <div className="cas">
               <img src="/book.svg" alt="kniha" />
               <p>čas čítania</p>
-              <h5>{data.time_reading} min</h5>
+              <h5>2 min</h5>
             </div>
             <div className="publikacia">
               <img src="/calendar.svg" alt="kniha" />
               <p>publikované</p>
-              <h5>{formattedDate}</h5>
+              <h5>20.06.2023</h5>
             </div>
           </div>
-          <h2>{data.title}</h2>
+          {/* <h2 style="color: white" id="articleTitle">Ako na marhule</h2> */}
         </div>
 
         <div className="cierny_container">
           <div className="cierny_container_spolu">
             <Image
-              src={urlFor(data.photo).url()}
-              alt="Obrázok ovocia"
+              src={urlFor(data.mapa).url()}
+              alt="Mapa okolia Záhoria"
               width={1000}
               height={1000}
+              className="full_width_image_mapa"
             />
 
-            {/* <img src="../css/images/ako_na_marhule.jpg" alt="obrazok marhule" /> */}
+            <img src="../css/images/ako_na_marhule.jpg" alt="obrazok marhule" />
 
             <p className="cierny_container_zbytok">
               Medzi pravé pálenku patria pravé destiláty z kôstkového ovocia. Ak
@@ -109,23 +95,21 @@ const Page = async ({ params }: { params: { slug: string } }) => {
       <AlmostEnd />
       <Footer />
 
-      {/* 
-      <div className="titulna_foto intro_padding">
-        <img
-          src={urlFor(data.photo).url()}
-          alt=""
-          className="bg_image_wrapper"
-        />
-        <div className="bg_image_dark_wrapper"></div>
-      </div>
-      <div className="padding_content bg-white">
-        <h1 className="text-black"></h1>
-        <div className="text_picture">
-          <PortableText value={data.content} />
-        </div>
-      </div> */}
+      {/*
+            <div className="titulna_foto intro_padding">
+              <img
+                src={urlFor(data.photo).url()}
+                alt=""
+                className="bg_image_wrapper"
+              />
+              <div className="bg_image_dark_wrapper"></div>
+            </div>
+            <div className="padding_content bg-white">
+              <h1 className="text-black"></h1>
+              <div className="text_picture">
+                <PortableText value={data.content} />
+              </div>
+            </div> */}
     </>
   );
 };
-
-export default Page;

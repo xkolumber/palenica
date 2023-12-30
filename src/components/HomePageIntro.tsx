@@ -1,6 +1,13 @@
+import { Actuality } from "@/app/lib/interface_actuality";
+import Link from "next/link";
 import React from "react";
+import Navbar from "./Navbar";
 
-const HomePageIntro = () => {
+interface Props {
+  data: Actuality[];
+}
+
+const HomePageIntro = ({ data }: Props) => {
   return (
     <section className="text-white uvod">
       <img src="/skuska_new.jpg" alt="" className="background-image" />
@@ -8,57 +15,7 @@ const HomePageIntro = () => {
       <div className="background-overlay"></div>
       {/* <div className="background-overlay2"></div> */}
       <header className="addition">
-        <nav className="nav collapsible">
-          <a aria-label="Palenica" className="nav__brand" href="index.html">
-            <img src="/logo.png" alt="logo palenice" />
-          </a>
-          <span>
-            <img
-              src="/nav-icon.svg"
-              alt="nav icon"
-              className="icon icon--white nav__toggler logo hamburger"
-            />
-          </span>
-          <ul className="list nav__list collapsible__content">
-            <li className="nav__item">
-              <span>
-                <img
-                  src="/close.svg"
-                  alt="nav icon"
-                  className="icon icon--white nav__close-button"
-                />
-              </span>
-            </li>
-            <li className="nav__item">
-              <a href="#">Úvod</a>
-            </li>
-            <li className="nav__item">
-              <a id="nase_sluzby">Naše služby</a>
-            </li>
-            <li className="nav__item">
-              <a href="php/cennik.html">Cenník</a>
-            </li>
-            <li className="nav__item">
-              <a id="galeria_">Galéria</a>
-            </li>
-            <li className="nav__item img__nav">
-              <a href="https://www.facebook.com/palenicaspisskabela">
-                <span>
-                  <img src="/biely_fb2.svg" alt="facebook" />
-                </span>
-              </a>
-            </li>
-            <li className="nav__item img__nav">
-              <span>
-                <img
-                  src="/biely_telefon.svg"
-                  alt="biely_telefon"
-                  id="uvod_mobile_m"
-                />
-              </span>
-            </li>
-          </ul>
-        </nav>
+        <Navbar />
       </header>
       <div id="includedContent0"></div>
       <section className="uvod__centered">
@@ -84,12 +41,16 @@ const HomePageIntro = () => {
       <div className="uvod__spodok">
         <div className="uvod__spodok__cast">
           <h4 className="text-decoration">Aktuality</h4>
-          <a href="php/sutaz.html" className="text-white link-arrow">
-            Súťaž ovocných destilátov
-          </a>
-          <a href="php/oznam.html" className="text-white link-arrow">
-            Sezóna v pálenici začína
-          </a>
+
+          {data.map((actuality, index) => (
+            <Link
+              href={`/actuality/${actuality.slug.current}`}
+              key={index}
+              className="text-white link-arrow"
+            >
+              {actuality.title}{" "}
+            </Link>
+          ))}
         </div>
 
         <div className="info__socials">

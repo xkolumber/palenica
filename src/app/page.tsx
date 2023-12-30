@@ -14,7 +14,7 @@ export default async function Home() {
   if (!data) return null;
   return (
     <main>
-      <HomePageIntro />
+      <HomePageIntro data={data} />
       {/* {data.map((actuality, index) => (
         <p key={index}>{actuality.title}</p>
       ))} */}
