@@ -5,7 +5,7 @@ const AlmostEnd = () => {
     <section className="end-transition">
       <div className="together">
         <div className="together__oddiel first">
-          <img src="../css/images/zaklad_png.png" alt="sipka" />
+          <img src="/zaklad_png.png" alt="sipka" />
         </div>
         <div className="together__oddiel second">
           <h2>ZAREZERVUJTE SI PÁLENIE UŽ DNES</h2>
