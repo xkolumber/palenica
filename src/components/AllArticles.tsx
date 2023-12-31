@@ -55,7 +55,7 @@ const AllArticles = ({ data }: Props) => {
                     src={urlFor(item.photo).url()}
                     alt="Obrázok ovocia"
                     width={500}
-                    height={500}
+                    height={200}
                   />
                   <h3>{item.title}</h3>
                   <div className="seda_07">

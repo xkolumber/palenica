@@ -70,7 +70,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
               src={urlFor(data.photo).url()}
               alt="Obrázok ovocia"
               width={1000}
-              height={1000}
+              height={340}
             />
 
             <div className="cierny_container_zbytok">
