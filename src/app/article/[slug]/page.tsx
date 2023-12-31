@@ -78,11 +78,11 @@ const Page = async ({ params }: { params: { slug: string } }) => {
             </div>
           </div>
         </div>
+        <h2 className="ine_napady">Iné nápady</h2>
         <AllArticles data={allData} />
       </section>
 
       <AlmostEnd />
-      <Footer />
     </>
   );
 };

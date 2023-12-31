@@ -27,7 +27,6 @@ async function getData(slug: string) {
 const AllArticles = ({ data }: Props) => {
   return (
     <div className="flexible_width">
-      <h2 className="ine_napady">Iné nápady</h2>
       <div className="flexible_width">
         <Swiper
           breakpoints={{
@@ -55,7 +54,8 @@ const AllArticles = ({ data }: Props) => {
                     src={urlFor(item.photo).url()}
                     alt="Obrázok ovocia"
                     width={500}
-                    height={200}
+                    height={350}
+                    priority={true}
                   />
                   <h3>{item.title}</h3>
                   <div className="seda_07">

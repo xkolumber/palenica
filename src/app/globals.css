@@ -123,6 +123,8 @@ a {
   background-size: cover;
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
+  justify-content: space-between;
 }
 .uvod h1 {
   margin: 0;
@@ -140,6 +142,7 @@ a {
   justify-content: center;
   position: relative;
   color: white;
+  margin-top: -10vh;
 }
 .uvod__spodok {
   display: flex;
@@ -188,6 +191,9 @@ a {
     padding: 0rem;
     height: 100vh;
   }
+  .uvod__centered {
+    margin-top: 0vh;
+  }
   .uvod__spodok {
     padding-left: 4rem;
     padding-right: 4rem;
@@ -210,7 +216,10 @@ a {
   min-height: 100vh;
   object-fit: cover;
   width: 100%;
+  top: 0;
+  left: 0;
 }
+
 .background-overlay {
   position: absolute;
   top: 0;
@@ -884,7 +893,7 @@ b {
   overflow: hidden;
 }
 .cierny_obdlznik img {
-  object-fit: contain;
+  object-fit: cover;
   width: 100%;
   border-radius: 1rem;
   margin-bottom: 1rem;
@@ -1009,6 +1018,45 @@ b {
   text-align: center;
 }
 
+/*Charaketistika o destilatoch */
+.sekcia__charakteristika {
+  max-width: 1140px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.added__check::before {
+  content: url("/biela_fajka.svg");
+  margin-right: 1rem;
+  transform: scale(0.7);
+  display: inline-block;
+}
+@media screen and (min-width: 768px) {
+  .logo__section {
+    margin-top: 4rem;
+  }
+  .sekcia {
+    padding: 4rem;
+  }
+  .sekcia__sluzby {
+    padding: 0rem;
+  }
+  .sekcia__charakteristika {
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 800px;
+  }
+  .logo__section__rady {
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .sekcia__charakteristika {
+    gap: 5rem;
+  }
+}
+
 /*Skupina obrazkov*/
 
 .skupina_obrazkov {
@@ -1112,5 +1160,163 @@ b {
     height: fit-content;
     cursor: pointer;
     object-fit: cover;
+  }
+}
+
+/*Cennik */
+
+.black-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #151515;
+  box-shadow: 0px 4px 22px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  padding: 2rem 4rem;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  width: 100%;
+}
+.black-container h5 {
+  color: var(--color-tertiary);
+  text-align: center;
+  font-size: 1.5rem;
+}
+.black-container h2 {
+  font-size: 5rem;
+}
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 100%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.circle img {
+  width: 50%;
+  object-fit: contain;
+}
+.oddiel {
+  flex-direction: column;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.oddiel__clenenie {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+.oddiel-first {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 0.15rem solid #d9d9d9;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.oddiel h4 {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  .black-container {
+    flex-direction: row;
+    width: fit-content;
+    width: 600px;
+    padding: 4rem;
+  }
+  .oddiel,
+  .oddiel-first {
+    width: 100%;
+    border: 0px;
+    margin-top: 0rem;
+  }
+  .oddiel {
+    border-left: 0.15rem solid #d9d9d9;
+    padding-left: 4rem;
+  }
+  .oddiel-first {
+    align-items: flex-start;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .black-container {
+    width: 800px;
+  }
+}
+
+/*Galeria*/
+.gallery {
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  max-width: 1024px;
+  width: 100%;
+}
+.gallery_3 {
+  display: Flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.gallery_3 p {
+  font-size: 1.6rem;
+  text-align: center;
+  z-index: 5;
+}
+.gallery_obdlznik {
+  position: relative;
+  height: 50px;
+  background: linear-gradient(
+    112.67deg,
+    #151515 -0.6%,
+    rgba(21, 21, 21, 0.93) 100%
+  );
+  border-radius: 1rem;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 1s ease-in;
+}
+.gallery_obdlznik:hover {
+  background: linear-gradient(
+    112.67deg,
+    rgba(18, 17, 17, 1) 10%,
+    /* Adjust the gray color here */ rgba(18, 17, 17, 1) 10%
+      /* Adjust the gray color here */
+  );
+}
+.gallery_obdlznik img {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+}
+@media screen and (min-width: 768px) {
+  .gallery {
+    max-width: 900px;
+  }
+  .gallery_obdlznik {
+    height: 23rem;
+    width: 33%;
+  }
+  .gallery_3 {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .gallery {
+    width: fit-content;
+    min-width: 800px;
   }
 }
