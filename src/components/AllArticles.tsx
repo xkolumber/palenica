@@ -45,7 +45,7 @@ const AllArticles = ({ data }: Props) => {
             clickable: true,
           }}
           modules={[FreeMode, Pagination]}
-          className="h-[440px] sm:h-[440px]"
+          className="h-[470px] sm:h-[440px]"
         >
           {data.map((item, index) => {
             return (
@@ -54,8 +54,8 @@ const AllArticles = ({ data }: Props) => {
                   <Image
                     src={urlFor(item.photo).url()}
                     alt="Obrázok ovocia"
-                    width={1000}
-                    height={1000}
+                    width={500}
+                    height={500}
                   />
                   <h3>{item.title}</h3>
                   <div className="seda_07">

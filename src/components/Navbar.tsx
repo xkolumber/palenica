@@ -1,11 +1,14 @@
+import Link from "next/link";
 import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="nav collapsible">
-      <a aria-label="Palenica" className="nav__brand" href="index.html">
-        <img src="/logo.png" alt="logo palenice" />
-      </a>
+    <nav className="nav collapsible addition__add">
+      <Link href={`/`} className="nav__brand">
+        {" "}
+        <img src="/logo.png" alt="logo palenice" />{" "}
+      </Link>
+
       <span>
         <img
           src="/nav-icon.svg"

@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
+import Link from "next/link";
 
 async function getData(slug: string) {
   const query = `*[_type == "article" && slug.current =="${slug}"][0]`;
@@ -38,13 +39,11 @@ const Page = async ({ params }: { params: { slug: string } }) => {
         <Navbar />
 
         <div className="cesta">
-          <a href="../index.html">Domov</a>
+          <Link href={`/`}>Domov</Link>
           <p className="cesta_sipka">&gt;</p>
-          <a href="rady_napady.html">Rady a nápady</a>
+          <Link href={`/advices_ideas`}>Rady a nápady</Link>
           <p className="cesta_sipka">&gt;</p>
-          <a href="" id="articleLink">
-            {data.title}
-          </a>
+          <p> {data.title}</p>
         </div>
       </div>
 
