@@ -36,5 +36,25 @@ export default {
         },
       ],
     },
+    {
+      name: 'price_service',
+      type: 'string',
+      title: 'Cena za službu',
+    },
+    {
+      name: 'tax',
+      type: 'string',
+      title: 'Spotrebná daň',
+    },
+    {
+      name: 'all',
+      type: 'string',
+      title: 'Celkom',
+    },
+    {
+      name: 'price_valid_from',
+      type: 'string',
+      title: 'Cena platná od',
+    },
   ],
 }

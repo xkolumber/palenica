@@ -36,7 +36,9 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   return (
     <>
       <div className="cerveny_container">
-        <Navbar />
+        <div className="addition__add">
+          <Navbar />
+        </div>
 
         <div className="cesta">
           <Link href={`/`}>Domov</Link>

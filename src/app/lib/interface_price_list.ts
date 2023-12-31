@@ -6,4 +6,8 @@ export interface PriceList {
   };
   _createdAt: string;
   content: any;
+  price_service: string;
+  tax: string;
+  all: string;
+  price_valid_from: string;
 }

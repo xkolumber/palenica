@@ -1,14 +1,12 @@
-import { Article } from "@/app/lib/interface_article";
+import { Actuality } from "@/app/lib/interface_actuality";
 import { client } from "@/app/lib/sanity";
 import { urlFor } from "@/app/lib/sanityImageUrl";
 import AlmostEnd from "@/components/AlmostEnd";
-import Footer from "@/components/Footer";
 import GroupPictures from "@/components/GroupPictures";
 import Navbar from "@/components/Navbar";
 import { PortableText } from "@portabletext/react";
-import Link from "next/link";
 import Image from "next/image";
-import { Actuality } from "@/app/lib/interface_actuality";
+import Link from "next/link";
 
 async function getData(slug: string) {
   const query = `*[_type == "actuality" && slug.current =="${slug}"][0]`;
@@ -36,7 +34,9 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   return (
     <>
       <div className="cerveny_container">
-        <Navbar />
+        <div className="addition__add">
+          <Navbar />
+        </div>
 
         <div className="cesta">
           <Link href={`/`}>Domov</Link>
@@ -72,8 +72,6 @@ const Page = async ({ params }: { params: { slug: string } }) => {
       </section>
 
       <AlmostEnd />
-
-      <Footer />
     </>
   );
 };

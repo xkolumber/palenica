@@ -5,6 +5,8 @@ import HomePageIntro from "@/components/HomePageIntro";
 import AllArticles from "@/components/AllArticles";
 import { Article } from "./lib/interface_article";
 import AlmostEnd from "@/components/AlmostEnd";
+import PriceListSection from "@/components/PriceListSection";
+import { PriceList } from "./lib/interface_price_list";
 
 async function getData() {
   const query = `*[_type == "actuality"]`;
@@ -18,11 +20,20 @@ async function getAllData() {
   return data;
 }
 
+async function getPriceList() {
+  const query = `*[_type == "price_list"][0]`;
+  const data = await client.fetch(query);
+  return data;
+}
+
 export default async function Home() {
   const data = (await getData()) as Actuality[];
   if (!data) return null;
 
   const allData = (await getAllData()) as Article[];
+
+  const price_list = (await getPriceList()) as PriceList;
+
   return (
     <main>
       <HomePageIntro data={data} />
@@ -55,52 +66,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="sekcia__main">
-        <div className="logo__section">
-          <img src="/logo.png" alt="logo" />
-          <h2>Cenník</h2>
-          <p>
-            Cena za spotrebnú daň z liehu vzrástla o 30%. Z tohto dôvodu sme
-            nútení pristúpiť k zvýšeniu ceny za služby destilácie v našej
-            Pálenici.
-          </p>
-        </div>
-        <div className="black-container">
-          <div className="oddiel-first">
-            <h2>7.6€</h2>
-            <h5>1 liter 50% domácej pálenky</h5>
-          </div>
-          <div className="oddiel">
-            <div className="oddiel__clenenie">
-              <div className="circle">
-                <img src="/fajka.svg" alt="" />
-              </div>
-              <p>4.09€ - Cena za službu</p>
-            </div>
-            <div className="oddiel__clenenie">
-              <div className="circle">
-                <img src="/fajka.svg" alt="" />
-              </div>
-              <p>3.51€ - Spotrebná daň</p>
-            </div>
-            <div className="oddiel__clenenie">
-              <div className="circle">
-                <img src="/fajka.svg" alt="" />
-              </div>
-              <p>Cena platná od 01.04.2023</p>
-            </div>
-            <div className="oddiel__clenenie">
-              <div className="circle">
-                <img src="/fajka.svg" alt="" />
-              </div>
-              <p>V cene nutné náklady</p>
-            </div>
-          </div>
-        </div>
-        <a href="php/cennik.html" className="link-arrow">
-          Komplet info o cenníku
-        </a>
-      </section>
+      <PriceListSection data={price_list} />
 
       <section className="sekcia__main">
         <div className="logo__section">
@@ -160,3 +126,5 @@ export default async function Home() {
     </main>
   );
 }
+
+export const dynamic = "force-dynamic";

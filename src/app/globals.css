@@ -142,7 +142,6 @@ a {
   justify-content: center;
   position: relative;
   color: white;
-  margin-top: -10vh;
 }
 .uvod__spodok {
   display: flex;
@@ -1040,6 +1039,8 @@ b {
   }
   .sekcia__sluzby {
     padding: 0rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
   }
   .sekcia__charakteristika {
     flex-direction: row;
