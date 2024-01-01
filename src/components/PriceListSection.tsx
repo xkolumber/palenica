@@ -6,7 +6,6 @@ interface Props {
   data: PriceList;
 }
 const PriceListSection = async ({ data }: Props) => {
-  console.log(data);
   return (
     <section className="sekcia__main">
       <div className="logo__section">

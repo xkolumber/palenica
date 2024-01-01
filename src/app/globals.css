@@ -1256,21 +1256,15 @@ b {
 
 /*Galeria*/
 .gallery {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
   gap: 1.5rem;
-  flex-direction: column;
   margin-bottom: 1rem;
   max-width: 1024px;
   width: 100%;
 }
-.gallery_3 {
-  display: Flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.gallery_3 p {
-  font-size: 1.6rem;
-  text-align: center;
+
+.gallery p {
   z-index: 5;
 }
 .gallery_obdlznik {
@@ -1305,11 +1299,11 @@ b {
 }
 @media screen and (min-width: 768px) {
   .gallery {
+    grid-template-columns: repeat(3, 1fr);
     max-width: 900px;
   }
   .gallery_obdlznik {
     height: 23rem;
-    width: 33%;
   }
   .gallery_3 {
     flex-direction: row;

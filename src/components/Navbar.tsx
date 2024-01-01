@@ -30,8 +30,8 @@ const Navbar = () => {
         <Link href={"/"} className="nav__item">
           Úvod
         </Link>
-        <Link href={"/"} className="nav__item">
-          Naše služby
+        <Link href={"/reservation"} className="nav__item">
+          Objednať pálenie
         </Link>
         <Link href={"/pricelist"} className="nav__item">
           Cenník

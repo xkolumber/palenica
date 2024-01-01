@@ -7,6 +7,8 @@ import { Article } from "./lib/interface_article";
 import AlmostEnd from "@/components/AlmostEnd";
 import PriceListSection from "@/components/PriceListSection";
 import { PriceList } from "./lib/interface_price_list";
+import { Gallery } from "./lib/interface_gallery";
+import { urlFor } from "./lib/sanityImageUrl";
 
 async function getData() {
   const query = `*[_type == "actuality"]`;
@@ -26,6 +28,12 @@ async function getPriceList() {
   return data;
 }
 
+async function getGallery() {
+  const query = `*[_type == "gallery"]`;
+  const data = await client.fetch(query);
+  return data;
+}
+
 export default async function Home() {
   const data = (await getData()) as Actuality[];
   if (!data) return null;
@@ -33,6 +41,8 @@ export default async function Home() {
   const allData = (await getAllData()) as Article[];
 
   const price_list = (await getPriceList()) as PriceList;
+
+  const gallery = (await getGallery()) as Gallery[];
 
   return (
     <main>
@@ -91,35 +101,21 @@ export default async function Home() {
           </p>
         </div>
         <div className="gallery">
-          <div className="gallery_3">
-            <div className="gallery_obdlznik" data-gallery-id="0">
-              <img src="/hrozno.svg" alt="sipka" />
-              <p>Tvorba kvasu</p>
-            </div>
-            <div className="gallery_obdlznik" data-gallery-id="1">
-              <img src="/supka.svg" alt="sipka" />
-              <p>Dôsledok zlého kvasu</p>
-            </div>
-            <div className="gallery_obdlznik" data-gallery-id="2">
-              <img src="/chyby.svg" alt="sipka" />
-              <p>Chyby pri spracovaní ovocia</p>
-            </div>
-          </div>
-          <div className="gallery_3">
-            <div className="gallery_obdlznik" data-gallery-id="5">
-              <img src="/like.svg" alt="sipka" />
-              <p>Naše etikety</p>
-            </div>
-
-            <div className="gallery_obdlznik" data-gallery-id="3">
-              <img src="/pohar.svg" alt="sipka" />
-              <p>Sútaž destilátov</p>
-            </div>
-            <div className="gallery_obdlznik" data-gallery-id="4">
-              <img src="/upratovanie.svg" alt="sipka" />
-              <p>Príprava na novú sezónu</p>
-            </div>
-          </div>
+          {gallery.map((one_gallery, index) => (
+            <>
+              <div className="gallery_obdlznik" key={index}>
+                <Image
+                  src={urlFor(one_gallery.title_photo).url()}
+                  alt="Additional photo"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                />
+                {/* <img src="/hrozno.svg" alt="sipka" /> */}
+                <p>{one_gallery.title}</p>
+              </div>
+            </>
+          ))}
         </div>
       </section>
       <AlmostEnd />
