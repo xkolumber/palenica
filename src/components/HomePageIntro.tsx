@@ -5,9 +5,10 @@ import Navbar from "./Navbar";
 
 interface Props {
   data: Actuality[];
+  pdf: string;
 }
 
-const HomePageIntro = ({ data }: Props) => {
+const HomePageIntro = ({ data, pdf }: Props) => {
   return (
     <section className="text-white uvod">
       <img src="/skuska_new.jpg" alt="" className="background-image" />
@@ -24,15 +25,12 @@ const HomePageIntro = ({ data }: Props) => {
           Pálime domácu pálenku zo širokého sortimentu ovocia.
         </p>
         <div className="btns-together">
-          <a href="php/formular.html" className="btn btn--secondary">
+          <Link href={"/reservation"} className="btn btn--secondary">
+            {" "}
             <img src="/fajka.svg" alt="" />
             Objednať pálenie online
-          </a>
-          <a
-            href="pdf/ziadost_vypalenie.pdf"
-            className="btn btn--primary"
-            target="_blank"
-          >
+          </Link>
+          <a href={pdf} className="btn btn--primary" target="_blank">
             Žiadosť o vypálenie v pdf
           </a>
         </div>

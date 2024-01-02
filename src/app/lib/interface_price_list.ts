@@ -10,4 +10,9 @@ export interface PriceList {
   tax: string;
   all: string;
   price_valid_from: string;
+  pdf: {
+    asset: {
+      _ref: string;
+    };
+  };
 }

@@ -26,7 +26,7 @@ const page = async () => {
         <div className="cesta">
           <Link href={`/`}>Domov</Link>
           <p className="cesta_sipka">&gt;</p>
-          <a href="p">Galéria</a>
+          <p className="p">Galéria</p>
         </div>
       </div>
       <section className="sekcia__main">

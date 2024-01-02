@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -8,20 +9,20 @@ const Footer = () => {
           <div className="footer__first">
             <img src="/logo.png" alt="logo" />
             <div className="socials">
-              <a href="https://www.facebook.com/palenicaspisskabela">
+              <Link href={"https://www.facebook.com/palenicaspisskabela"}>
+                {" "}
                 <img src="/facebook.svg" alt="facebook" />
-              </a>
+              </Link>
+
               <img src="/telephone.svg" alt="telephone" id="footer_mobile" />
             </div>
           </div>
           <div className="footer__second">
             <h4>Rýchle odkazy</h4>
-            <a href="">Naše služby</a>
-            <a href="">Cenník</a>
-            <a href="../pdf/prevadzkovy_poriadok.pdf" target="_blank">
-              Prevádzkový poriadok
-            </a>
-            <a href="/php/ochrana_udajov.html">Ochrana osobných údajov</a>
+            <Link href={"/reservation"}>Objednať pálenie</Link>
+            <Link href={"/pricelist"}>Cenník</Link>
+            <Link href={"/rules"}>Prevádzkový poriadok</Link>
+            <Link href={"/data_protection"}>Ochrana osobných údajov</Link>
           </div>
           <div className="footer__second">
             <h4>Kontakt</h4>

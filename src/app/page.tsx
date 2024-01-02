@@ -34,6 +34,13 @@ async function getGallery() {
   return data;
 }
 
+async function getPdf() {
+  const query = `*[_type == "price_list"][0].pdf.asset->url
+  `;
+  const data = await client.fetch(query);
+  return data;
+}
+
 export default async function Home() {
   const data = (await getData()) as Actuality[];
   if (!data) return null;
@@ -44,9 +51,11 @@ export default async function Home() {
 
   const gallery = (await getGallery()) as Gallery[];
 
+  const pdf = await getPdf();
+
   return (
     <main>
-      <HomePageIntro data={data} />
+      <HomePageIntro data={data} pdf={pdf} />
       <div className="strip" id="nase_sluzby_container">
         <div className="logo__section">
           <img src="/logo.png" alt="logo" />

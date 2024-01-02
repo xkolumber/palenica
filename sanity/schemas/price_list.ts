@@ -56,5 +56,11 @@ export default {
       type: 'string',
       title: 'Cena platná od',
     },
+    {
+      name: 'pdf',
+      title: 'Žiadosť o vypálenie - pdf súbor',
+      type: 'file',
+      accept: '.pdf',
+    },
   ],
 }

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const AlmostEnd = () => {
@@ -9,9 +10,9 @@ const AlmostEnd = () => {
         </div>
         <div className="together__oddiel second">
           <h2>ZAREZERVUJTE SI PÁLENIE UŽ DNES</h2>
-          <a href="formular.html" className="btn btn--primary">
+          <Link href={"/reservation"} className="btn btn--primary">
             Rezervácia
-          </a>
+          </Link>
         </div>
       </div>
     </section>
