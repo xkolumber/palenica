@@ -929,6 +929,9 @@ b {
   overflow: hidden;
   color: var(--color-tertiary);
 }
+.seda_07 p {
+  color: var(--color-tertiary) !important;
+}
 .navigation__arrows {
   display: flex;
   flex-direction: row;

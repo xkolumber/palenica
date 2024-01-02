@@ -15,7 +15,7 @@ const page = () => {
           <div className="cesta">
             <Link href={`/`}>Domov</Link>
             <p className="cesta_sipka">&gt;</p>
-            <p className="p">Cenník</p>
+            <p className="p">Objednávkový formulár</p>
           </div>
         </div>
 

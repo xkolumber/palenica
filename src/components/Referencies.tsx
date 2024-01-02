@@ -18,9 +18,8 @@ const Referencies = () => {
       slidesPerView={1}
       autoplay={{ delay: 3000 }}
       className="mySwiper"
-      //   pagination={{ clickable: false }}
     >
-      <SwiperSlide>
+      <SwiperSlide key={1}>
         <p>Hruškovica bola vynikajúca. Ďakujem Marekovi za pomoc.</p>
         <div className="referencie_box">
           <img src="/marian_halcin.jpg" alt="foto" />
@@ -30,7 +29,7 @@ const Referencies = () => {
           </div>
         </div>
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide key={2}>
         <p>Marhuľovica bola podľa mojich predstáv. Odporúčam.</p>
         <div className="referencie_box">
           <img src="/martin.jpg" alt="foto" />
@@ -40,7 +39,7 @@ const Referencies = () => {
           </div>
         </div>
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide key={3}>
         <p>Oceňujem prístup a odbornosť. Skvelá spolupráca.</p>
         <div className="referencie_box">
           <img src="/lubos.jpg" alt="foto" />

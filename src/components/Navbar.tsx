@@ -1,7 +1,16 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const Navbar = () => {
+  const [closeClicked, setCloseClicked] = useState(false);
+
+  const clickedButtonClose = () => {
+    setCloseClicked(!closeClicked);
+    console.log(closeClicked);
+  };
+
+  console.log;
   return (
     <nav className="nav collapsible ">
       <Link href={`/`} className="nav__brand">
@@ -23,6 +32,7 @@ const Navbar = () => {
               src="/close.svg"
               alt="nav icon"
               className="icon icon--white nav__close-button"
+              onClick={() => clickedButtonClose()}
             />
           </span>
         </li>
@@ -58,6 +68,7 @@ const Navbar = () => {
           </span>
         </li>
       </ul>
+      {closeClicked && <div className="collapsible__content">f</div>}
     </nav>
   );
 };
