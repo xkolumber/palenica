@@ -16,7 +16,6 @@ const GalleryHomePage = ({ gallery }: Props) => {
   const galleryClicked = (id: string) => {
     const selected = gallery.find((item) => item._id === id);
     setSelectedGallery(selected || null);
-    console.log(selectedGallery);
   };
   const handleClose = () => {
     setSelectedGallery(null);
@@ -45,6 +44,7 @@ const GalleryHomePage = ({ gallery }: Props) => {
         <GalleryViewer
           photos={selectedGallery.photos}
           handleClose={handleClose}
+          created_at={selectedGallery._createdAt}
         />
       )}
     </div>

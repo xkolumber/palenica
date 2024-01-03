@@ -1,16 +1,13 @@
 import AlmostEnd from "@/components/AlmostEnd";
+import GalleryHomePage from "@/components/GalleryHomePage";
 import Navbar from "@/components/Navbar";
-import React from "react";
-import { client } from "../lib/sanity";
-import { PriceList } from "../lib/interface_price_list";
-import { PortableText } from "@portabletext/react";
 import Link from "next/link";
-import { urlFor } from "../lib/sanityImageUrl";
-import Image from "next/image";
 import { Gallery } from "../lib/interface_gallery";
+import { client } from "../lib/sanity";
 
 async function getGallery() {
-  const query = `*[_type == "gallery"]`;
+  const query = `*[_type == "gallery"]
+  | order(_createdAt desc)`;
   const data = await client.fetch(query);
   return data;
 }
@@ -39,22 +36,7 @@ const page = async () => {
             pre estetické požitky, ale aj pre vzdelávanie a objavovanie.
           </p>
         </div>
-        <div className="gallery">
-          {gallery.map((one_gallery, index) => (
-            <>
-              <div className="gallery_obdlznik" key={index}>
-                <Image
-                  src={urlFor(one_gallery.title_photo).url()}
-                  alt="Additional photo"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                />
-                <p>{one_gallery.title}</p>
-              </div>
-            </>
-          ))}
-        </div>
+        <GalleryHomePage gallery={gallery} />
       </section>
 
       <AlmostEnd />

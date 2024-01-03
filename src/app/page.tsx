@@ -1,15 +1,13 @@
-import Image from "next/image";
-import { client } from "./lib/sanity";
-import { Actuality } from "./lib/interface_actuality";
-import HomePageIntro from "@/components/HomePageIntro";
 import AllArticles from "@/components/AllArticles";
-import { Article } from "./lib/interface_article";
 import AlmostEnd from "@/components/AlmostEnd";
-import PriceListSection from "@/components/PriceListSection";
-import { PriceList } from "./lib/interface_price_list";
-import { Gallery } from "./lib/interface_gallery";
-import { urlFor } from "./lib/sanityImageUrl";
 import GalleryHomePage from "@/components/GalleryHomePage";
+import HomePageIntro from "@/components/HomePageIntro";
+import PriceListSection from "@/components/PriceListSection";
+import { Actuality } from "./lib/interface_actuality";
+import { Article } from "./lib/interface_article";
+import { Gallery } from "./lib/interface_gallery";
+import { PriceList } from "./lib/interface_price_list";
+import { client } from "./lib/sanity";
 
 async function getData() {
   const query = `*[_type == "actuality"]`;
@@ -30,7 +28,8 @@ async function getPriceList() {
 }
 
 async function getGallery() {
-  const query = `*[_type == "gallery"]`;
+  const query = `*[_type == "gallery"][0..5]
+  | order(_createdAt desc)`;
   const data = await client.fetch(query);
   return data;
 }
