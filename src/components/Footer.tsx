@@ -13,8 +13,9 @@ const Footer = () => {
                 {" "}
                 <img src="/facebook.svg" alt="facebook" />
               </Link>
-
-              <img src="/telephone.svg" alt="telephone" id="footer_mobile" />
+              <a href="tel:+421919210930">
+                <img src="/telephone.svg" alt="telephone" id="footer_mobile" />
+              </a>
             </div>
           </div>
           <div className="footer__second">

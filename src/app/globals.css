@@ -486,7 +486,7 @@ a {
   flex-direction: row;
   gap: 1rem;
   align-items: baseline;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   cursor: pointer;
 }
 .socials img {
@@ -1054,7 +1054,6 @@ b {
     max-width: 800px;
   }
   .logo__section__rady {
-    margin-bottom: 0rem;
     margin-top: 0rem;
   }
 }
@@ -1559,6 +1558,7 @@ textarea {
 .container_sekcia {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 }
 
 /*tablet*/

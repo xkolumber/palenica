@@ -6,7 +6,7 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Pálenica Spišská Belá",
+  title: "Formulár",
   description:
     "Dohodnime si termín pálenia, prineste kvas, o zbytok sa postaráme my.",
   keywords: ["pálenica Spisšká Belá", "pálenica", "Spisšká Belá", "destilát"],
@@ -48,7 +48,7 @@ const page = () => {
                 </div>
                 <div className="space_between">
                   <div className="container_formular_spolu">
-                    <h2>Začnite Vašu cestu s nami.</h2>
+                    <h2 className="text-center">Začnite Vašu cestu s nami.</h2>
                     <p className="pc">
                       Dohodnime si termín pálenia, prineste kvas, o zbytok sa
                       postaráme my.

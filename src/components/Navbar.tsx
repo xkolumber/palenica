@@ -91,11 +91,13 @@ const Navbar = () => {
           </Link>
 
           <span className="nav__item img__nav">
-            <img
-              src="/biely_telefon.svg"
-              alt="biely_telefon"
-              id="uvod_mobile_m"
-            />
+            <a href="tel:+421919210930">
+              <img
+                src="/biely_telefon.svg"
+                alt="biely_telefon"
+                id="uvod_mobile_m"
+              />
+            </a>
           </span>
         </div>
       )}
