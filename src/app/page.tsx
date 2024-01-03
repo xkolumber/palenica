@@ -9,6 +9,7 @@ import PriceListSection from "@/components/PriceListSection";
 import { PriceList } from "./lib/interface_price_list";
 import { Gallery } from "./lib/interface_gallery";
 import { urlFor } from "./lib/sanityImageUrl";
+import GalleryHomePage from "@/components/GalleryHomePage";
 
 async function getData() {
   const query = `*[_type == "actuality"]`;
@@ -109,23 +110,7 @@ export default async function Home() {
             pre estetické požitky, ale aj pre vzdelávanie a objavovanie.
           </p>
         </div>
-        <div className="gallery">
-          {gallery.map((one_gallery, index) => (
-            <>
-              <div className="gallery_obdlznik" key={index}>
-                <Image
-                  src={urlFor(one_gallery.title_photo).url()}
-                  alt="Additional photo"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                />
-                {/* <img src="/hrozno.svg" alt="sipka" /> */}
-                <p>{one_gallery.title}</p>
-              </div>
-            </>
-          ))}
-        </div>
+        <GalleryHomePage gallery={gallery} />
       </section>
       <AlmostEnd />
     </main>

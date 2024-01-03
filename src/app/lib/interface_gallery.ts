@@ -11,6 +11,6 @@ export interface Photo {
     asset: {
       _ref: string;
     };
-    description: string;
   };
+  description: string;
 }

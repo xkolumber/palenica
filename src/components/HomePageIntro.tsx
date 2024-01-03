@@ -60,10 +60,13 @@ const HomePageIntro = ({ data, pdf }: Props) => {
             <img src="/biely_mail.svg" alt="mail_icon" />
             <p>palenicaspisskabela@gmail.com</p>
           </div>
-          <div className="img__text">
+          <Link
+            href={"https://www.facebook.com/palenicaspisskabela"}
+            className="img__text"
+          >
             <img src="/biely_fb.svg" alt="biely_fb" />
             <p>Pálenica Spišská Belá</p>
-          </div>
+          </Link>
         </div>
       </div>
     </section>
