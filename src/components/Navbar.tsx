@@ -23,20 +23,10 @@ const Navbar = () => {
           src="/nav-icon.svg"
           alt="nav icon"
           className="icon icon--white nav__toggler logo hamburger"
+          onClick={() => clickedButtonClose()}
         />
       </span>
       <ul className="list nav__list collapsible__content">
-        <li className="nav__item">
-          <span>
-            <img
-              src="/close.svg"
-              alt="nav icon"
-              className="icon icon--white nav__close-button"
-              onClick={() => clickedButtonClose()}
-            />
-          </span>
-        </li>
-
         <Link href={"/"} className="nav__item">
           Úvod
         </Link>
@@ -49,26 +39,66 @@ const Navbar = () => {
         <Link href={"/gallery"} className="nav__item">
           Galéria
         </Link>
+      </ul>
+      {closeClicked && (
+        <div className="collapsible--expanded">
+          <span className="nav__item">
+            <img
+              src="/close.svg"
+              alt="nav icon"
+              className="icon icon--white nav__close-button"
+              onClick={() => clickedButtonClose()}
+            />
+          </span>
 
-        <li className="nav__item img__nav">
-          <Link href={"https://www.facebook.com/palenicaspisskabela"}>
+          <Link
+            href={"/"}
+            className="nav__item"
+            onClick={() => clickedButtonClose()}
+          >
+            Úvod
+          </Link>
+          <Link
+            href={"/reservation"}
+            className="nav__item"
+            onClick={() => clickedButtonClose()}
+          >
+            Objednať pálenie
+          </Link>
+          <Link
+            href={"/pricelist"}
+            className="nav__item"
+            onClick={() => clickedButtonClose()}
+          >
+            Cenník
+          </Link>
+          <Link
+            href={"/gallery"}
+            className="nav__item"
+            onClick={() => clickedButtonClose()}
+          >
+            Galéria
+          </Link>
+
+          <Link
+            href={"https://www.facebook.com/palenicaspisskabela"}
+            className="nav__item img__nav"
+          >
             {" "}
             <span>
               <img src="/biely_fb2.svg" alt="facebook" />
             </span>
           </Link>
-        </li>
-        <li className="nav__item img__nav">
-          <span>
+
+          <span className="nav__item img__nav">
             <img
               src="/biely_telefon.svg"
               alt="biely_telefon"
               id="uvod_mobile_m"
             />
           </span>
-        </li>
-      </ul>
-      {closeClicked && <div className="collapsible__content">f</div>}
+        </div>
+      )}
     </nav>
   );
 };

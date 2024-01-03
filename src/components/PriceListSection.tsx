@@ -1,5 +1,6 @@
 import { PriceList } from "@/app/lib/interface_price_list";
 import { client } from "@/app/lib/sanity";
+import Link from "next/link";
 import React from "react";
 
 interface Props {
@@ -49,9 +50,10 @@ const PriceListSection = async ({ data }: Props) => {
           </div>
         </div>
       </div>
-      <a href="php/cennik.html" className="link-arrow">
+      <Link href={"/pricelist"} className="link-arrow">
+        {" "}
         Komplet info o cenníku
-      </a>
+      </Link>
     </section>
   );
 };

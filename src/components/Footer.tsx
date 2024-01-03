@@ -18,7 +18,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer__second">
-            <h4>Rýchle odkazy</h4>
+            <h4 className="text-decoration ">Rýchle odkazy</h4>
             <Link href={"/reservation"}>Objednať pálenie</Link>
             <Link href={"/pricelist"}>Cenník</Link>
             <Link href={"/rules"}>Prevádzkový poriadok</Link>
