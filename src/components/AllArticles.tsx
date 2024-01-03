@@ -18,12 +18,6 @@ interface Props {
   data: Article[];
 }
 
-async function getData(slug: string) {
-  const query = `*[_type == "article" && slug.current =="${slug}"][0]`;
-  const data = await client.fetch(query);
-  return data;
-}
-
 const AllArticles = ({ data }: Props) => {
   return (
     <div className="flexible_width">
