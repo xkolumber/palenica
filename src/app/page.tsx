@@ -8,6 +8,25 @@ import { Article } from "./lib/interface_article";
 import { Gallery } from "./lib/interface_gallery";
 import { PriceList } from "./lib/interface_price_list";
 import { client } from "./lib/sanity";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pálenica Spišská Belá",
+  description:
+    "V našom liehovare ponúkame destiláciu Vášho kvasu vo veľkosti od 100l s možnosťou poskytnutia upravenej vody na riedenie destilátu.",
+  keywords: ["pálenica Spisšká Belá", "pálenica", "Spisšká Belá", "destilát"],
+  openGraph: {
+    title: "Pálenia Spišská Belá",
+    description:
+      "V našom liehovare ponúkame destiláciu Vášho kvasu vo veľkosti od 100l",
+    images: [
+      {
+        url: "/skuska_new.jpg",
+        alt: "Pálenica",
+      },
+    ],
+  },
+};
 
 async function getData() {
   const query = `*[_type == "actuality"]`;

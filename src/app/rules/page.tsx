@@ -1,7 +1,15 @@
 import AlmostEnd from "@/components/AlmostEnd";
 import Navbar from "@/components/Navbar";
+import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Prevádzkový poriadok",
+  description:
+    "V pálenici možno vyrábať destilát len z dopestovaného ovocia v miernom podnebnom pásme, z jeho kvasov, z plodov viniča hroznorodého",
+  keywords: ["prevádzkový poriadok", "pálenica Spišská Belá"],
+};
 
 const page = () => {
   return (

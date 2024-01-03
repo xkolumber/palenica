@@ -5,6 +5,29 @@ import { client } from "../lib/sanity";
 import { PriceList } from "../lib/interface_price_list";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Cenník",
+  description:
+    "Cena za výrobu destilátu z dodaného ovocného kvasu je stanovená vo výške...",
+  keywords: [
+    "cenník pálenica",
+    "pálenica Spišská Belá",
+    "pálenie destilátu pod Tatrami",
+  ],
+  openGraph: {
+    title: "Cenník",
+    description:
+      "Cena za výrobu destilátu z dodaného ovocného kvasu je stanovená vo výške...",
+    images: [
+      {
+        url: "/skuska_new.jpg",
+        alt: "Pálenica",
+      },
+    ],
+  },
+};
 
 async function getData() {
   const query = `*[_type == "price_list"][0]`;

@@ -1,8 +1,27 @@
 import AlmostEnd from "@/components/AlmostEnd";
 import Navbar from "@/components/Navbar";
 import Referencies from "@/components/Referencies";
+import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Pálenica Spišská Belá",
+  description:
+    "Dohodnime si termín pálenia, prineste kvas, o zbytok sa postaráme my.",
+  keywords: ["pálenica Spisšká Belá", "pálenica", "Spisšká Belá", "destilát"],
+  openGraph: {
+    title: "Pálenia Spišská Belá",
+    description:
+      "Dohodnime si termín pálenia, prineste kvas, o zbytok sa postaráme my.",
+    images: [
+      {
+        url: "/skuska_new.jpg",
+        alt: "Pálenica",
+      },
+    ],
+  },
+};
 
 const page = () => {
   return (

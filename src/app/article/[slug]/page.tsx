@@ -3,11 +3,58 @@ import { client } from "@/app/lib/sanity";
 import { urlFor } from "@/app/lib/sanityImageUrl";
 import AllArticles from "@/components/AllArticles";
 import AlmostEnd from "@/components/AlmostEnd";
-import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { PortableText } from "@portabletext/react";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+const dynamicTitle = async (slug: string) => {
+  const query = `*[_type == "article" && slug.current == "${slug}"][0].title`;
+  const data = await client.fetch(query);
+  return data;
+};
+
+const dynamicImageUrl = async (slug: string) => {
+  const query = `*[_type == "article" && slug.current ==  "${slug}"][0]`;
+  const data = await client.fetch(query);
+  const src = urlFor(data.photo).url();
+  return src;
+};
+const dynamicDescription = async (slug: string) => {
+  const query = `*[_type == "article" && slug.current ==  "${slug}"][0].content[0].children[0].text`;
+  const data = await client.fetch(query);
+  const stringData = String(data);
+  return stringData.substring(0, Math.min(stringData.length, 80));
+};
+
+type Props = {
+  params: { slug: string };
+};
+
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const title = await dynamicTitle(params.slug);
+  const imageUrl = await dynamicImageUrl(params.slug);
+  const dynamicText = await dynamicDescription(params.slug);
+
+  return {
+    title: title,
+    description: dynamicText,
+    keywords: ["pálenica Spisšká Belá", `${title}`, "článok"],
+    openGraph: {
+      title: title,
+      description: dynamicText,
+      images: [
+        {
+          url: imageUrl,
+          alt: title,
+        },
+      ],
+    },
+  };
+};
 
 async function getData(slug: string) {
   const query = `*[_type == "article" && slug.current =="${slug}"][0]`;

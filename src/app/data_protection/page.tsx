@@ -1,7 +1,15 @@
 import AlmostEnd from "@/components/AlmostEnd";
 import Navbar from "@/components/Navbar";
+import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "GDPR",
+  description:
+    "Skôr, ako poskytnete svoje osobné údaje, určite si podrobne prečítajte nižšie uvedené informácie.",
+  keywords: ["pálenica Spisšká Belá", "gdpr", "ochrana osobných údajov"],
+};
 
 const page = () => {
   return (

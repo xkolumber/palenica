@@ -4,6 +4,25 @@ import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import { Gallery } from "../lib/interface_gallery";
 import { client } from "../lib/sanity";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Galéria",
+  description:
+    "Zdokumentované momenty nám pripomínajú dôležitosť a krásu pálenia ako remesla aj umeleckého vyjadrenia. Táto galéria je nielen miestom pre estetické požitky, ale aj pre vzdelávanie a objavovanie.",
+  keywords: ["pálenica Spisšká Belá", "pálenica", "Spisšká Belá", "destilát"],
+  openGraph: {
+    title: "Galéria",
+    description:
+      "Zdokumentované momenty nám pripomínajú dôležitosť a krásu pálenia ako remesla aj umeleckého vyjadrenia. Táto galéria je nielen miestom pre estetické požitky, ale aj pre vzdelávanie a objavovanie.",
+    images: [
+      {
+        url: "/skuska_new.jpg",
+        alt: "Pálenica",
+      },
+    ],
+  },
+};
 
 async function getGallery() {
   const query = `*[_type == "gallery"]
