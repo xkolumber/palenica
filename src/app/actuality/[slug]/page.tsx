@@ -84,17 +84,22 @@ const Page = async ({ params }: { params: { slug: string } }) => {
 
   const PortableTextComponent = {
     types: {
-      image: ({ value }: { value: any }) => (
-        <Image
-          src={urlFor(value).url()}
-          alt="image"
-          width={0}
-          height={0}
-          sizes="100vw"
-          quality={100}
-          className="article_img_one_photo"
-        />
-      ),
+      image: ({ value }: { value: any }) => {
+        if (value && value.asset && value.asset._ref) {
+          return (
+            <Image
+              src={urlFor(value).url()}
+              alt="image"
+              width={0}
+              height={0}
+              sizes="100vw"
+              quality={100}
+              className="article_img_one_photo"
+            />
+          );
+        }
+        return null;
+      },
     },
   };
 
