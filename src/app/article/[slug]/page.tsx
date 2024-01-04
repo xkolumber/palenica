@@ -151,9 +151,10 @@ const Page = async ({ params }: { params: { slug: string } }) => {
               />
               <br></br>
               <div className="autori">
-                {data.authors.map((author, index) => (
-                  <p key={index}>{author}</p>
-                ))}
+                {data.authors &&
+                  data.authors.map((author, index) => (
+                    <p key={index}>{author}</p>
+                  ))}
               </div>
             </div>
           </div>
