@@ -9,6 +9,7 @@ import { Gallery } from "./lib/interface_gallery";
 import { PriceList } from "./lib/interface_price_list";
 import { client } from "./lib/sanity";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Pálenica Spišská Belá",
@@ -35,7 +36,7 @@ async function getData() {
 }
 
 async function getAllData() {
-  const query = `*[_type == "article"]`;
+  const query = `*[_type == "article"][0..5]`;
   const data = await client.fetch(query);
   return data;
 }
@@ -116,6 +117,13 @@ export default async function Home() {
           </p>
         </div>
         <AllArticles data={allData} />
+        <Link
+          href={"/advices_ideas"}
+          className="link-arrow -mt-16 sm:-mt-10 cursor-pointer z-20 relative"
+        >
+          {" "}
+          Všetky rady a nápady
+        </Link>
       </section>
 
       <section className="sekcia__main" id="gallery_container">
