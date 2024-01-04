@@ -82,6 +82,22 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   const data = (await getData(params.slug)) as Actuality;
   const data2 = await getPhotos(params.slug);
 
+  const PortableTextComponent = {
+    types: {
+      image: ({ value }: { value: any }) => (
+        <Image
+          src={urlFor(value).url()}
+          alt="image"
+          width={0}
+          height={0}
+          sizes="100vw"
+          quality={100}
+          className="article_img_one_photo"
+        />
+      ),
+    },
+  };
+
   return (
     <>
       <div className="cerveny_container">
@@ -102,7 +118,10 @@ const Page = async ({ params }: { params: { slug: string } }) => {
             {/* <img src="/logo.png" alt="logo" /> */}
             <h2>{data.title}</h2>
           </div>
-          <PortableText value={data.content} />
+          <PortableText
+            value={data.content}
+            components={PortableTextComponent}
+          />
 
           {data2[0].group_images && (
             <GroupPictures data={data2[0]} parameter="group_images" />

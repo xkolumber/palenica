@@ -37,7 +37,7 @@ const AllArticles = ({ data }: Props) => {
           pagination={{
             clickable: true,
           }}
-          modules={[FreeMode, Pagination]}
+          modules={[FreeMode]}
           className="h-[470px] sm:h-[440px]"
         >
           {data.map((item, index) => {

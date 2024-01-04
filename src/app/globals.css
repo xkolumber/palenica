@@ -1094,8 +1094,13 @@ b {
   object-fit: cover;
 }
 .article_img_one_photo {
-  width: 100%;
-  object-fit: contain;
+  width: 100% !important;
+  object-fit: cover !important;
+  max-height: fit-content !important;
+  height: 100% !important;
+}
+.autori {
+  text-align: right;
 }
 
 /*Custom gallery*/

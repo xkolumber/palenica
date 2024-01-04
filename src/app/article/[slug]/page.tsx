@@ -80,6 +80,23 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   const year = date.getFullYear();
 
   const formattedDate = `${day}.${month}.${year}`;
+
+  const PortableTextComponent = {
+    types: {
+      image: ({ value }: { value: any }) => (
+        <Image
+          src={urlFor(value).url()}
+          alt="image"
+          width={0}
+          height={0}
+          sizes="100vw"
+          quality={100}
+          className="article_img_one_photo"
+        />
+      ),
+    },
+  };
+
   return (
     <>
       <div className="cerveny_container">
@@ -123,7 +140,16 @@ const Page = async ({ params }: { params: { slug: string } }) => {
             />
 
             <div className="cierny_container_zbytok">
-              <PortableText value={data.content} />
+              <PortableText
+                value={data.content}
+                components={PortableTextComponent}
+              />
+              <br></br>
+              <div className="autori">
+                {data.authors.map((author, index) => (
+                  <p key={index}>{author}</p>
+                ))}
+              </div>
             </div>
           </div>
         </div>
