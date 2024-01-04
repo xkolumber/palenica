@@ -161,6 +161,6 @@ const Page = async ({ params }: { params: { slug: string } }) => {
     </>
   );
 };
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export default Page;

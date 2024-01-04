@@ -48,4 +48,6 @@ const page = async () => {
   );
 };
 
+export const revalidate = 300;
+
 export default page;
