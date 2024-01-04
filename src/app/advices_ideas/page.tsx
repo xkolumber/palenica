@@ -48,6 +48,6 @@ const page = async () => {
   );
 };
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 export default page;
