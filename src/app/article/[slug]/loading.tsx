@@ -35,8 +35,8 @@ const loading = () => {
               <Skeleton count={1} width={150} />
             </div>
           </div>
-          <div className="mb-6">
-            <Skeleton count={1} width={350} height={40} />
+          <div className="mb-6 w-full md:w-3/6">
+            <Skeleton count={1} height={40} />
           </div>
         </div>
 
