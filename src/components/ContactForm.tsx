@@ -6,6 +6,7 @@ import { FieldValues, useForm } from "react-hook-form";
 import { ClipLoader } from "react-spinners";
 import * as yup from "yup";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const ContactForm = () => {
   const schema = yup.object({
@@ -30,6 +31,12 @@ const ContactForm = () => {
   });
 
   const [isLoading, setIsLoading] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { checked } = event.target;
+    setIsChecked(checked);
+  };
 
   type FormData = yup.InferType<typeof schema>;
   const navigate = useRouter();
@@ -44,33 +51,37 @@ const ContactForm = () => {
   const onSubmit = async (data: FieldValues) => {
     setIsLoading(true);
 
-    try {
-      const response = await fetch("/api/send-form", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          meno_priezvisko: data.meno_priezvisko,
-          telefon: data.telefon,
-          email: data.email,
-          druh_kvasu: data.druh_kvasu,
-          koniec_kvasenia: data.koniec_kvasenia,
-          message: data.message,
-        }),
-      });
+    if (isChecked) {
+      try {
+        const response = await fetch("/api/send-form", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            meno_priezvisko: data.meno_priezvisko,
+            telefon: data.telefon,
+            email: data.email,
+            druh_kvasu: data.druh_kvasu,
+            koniec_kvasenia: data.koniec_kvasenia,
+            message: data.message,
+          }),
+        });
 
-      if (response.ok) {
-        reset();
-        navigate.push(`/thanks`);
-        console.log("Email sent successfully!");
-        setIsLoading(false);
-      } else {
-        console.error("Failed to send email");
+        if (response.ok) {
+          reset();
+          navigate.push(`/thanks`);
+          console.log("Email sent successfully!");
+          setIsLoading(false);
+        } else {
+          console.error("Failed to send email");
+          setIsLoading(false);
+        }
+      } catch (error) {
+        console.error("Error sending email:", error);
         setIsLoading(false);
       }
-    } catch (error) {
-      console.error("Error sending email:", error);
+    } else {
       setIsLoading(false);
     }
   };
@@ -153,10 +164,10 @@ const ContactForm = () => {
       </p>
 
       <div className="checkbox_text">
-        <input type="checkbox" id="scales" name="scales" />
+        <input type="checkbox" id="checkbox" onChange={handleChange} />
         <label>
-          Súhlasím so spracovaním osobných údajov,
-          <a href="ochrana_udajov.html"> viac informácii tu.</a>
+          <span className="ml-2">Súhlasím so spracovaním osobných údajov</span>,{" "}
+          <Link href={"/data_protection"}>viac informácii tu.</Link>
         </label>
       </div>
 
