@@ -33,22 +33,6 @@ const loading = () => {
           </div>
         </section>
       </div>
-      {/* 
-       
-
-       
-      
-
-      <section className="sekcia">
-        <div className="flexible_width">
-          <div className="w-full mb-6">
-            <Skeleton count={1} height={40} />
-          </div>
-          <div className="w-full">
-            <Skeleton count={5} />
-          </div>
-        </div>
-      </section> */}
     </>
   );
 };
