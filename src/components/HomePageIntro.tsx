@@ -11,7 +11,7 @@ interface Props {
 const HomePageIntro = ({ data, pdf }: Props) => {
   return (
     <section className="text-white uvod">
-      <img src="/skuska_new.jpg" alt="" className="background-image" />
+      <div className="background-image" />
       {/* <div className="background-image2"></div> */}
       <div className="background-overlay"></div>
       {/* <div className="background-overlay2"></div> */}
