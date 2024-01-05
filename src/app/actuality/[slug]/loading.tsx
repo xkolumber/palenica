@@ -26,6 +26,7 @@ const loading = () => {
           </div>
           <div className="w-full">
             <Skeleton count={5} />
+            <Skeleton height={500} />
           </div>
         </div>
       </section>
