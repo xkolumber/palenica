@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
   try {
     const data = await resend.emails.send({
       from: "info@palenicaspisskabela.sk",
-      to: "palenicaspisskabela@gmail.com",
+      to: "lubosk158@gmail.com",
       subject: "Dotaz od zákazníka",
       html: emailHtml,
     });
