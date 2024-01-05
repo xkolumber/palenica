@@ -379,7 +379,6 @@ a {
   border: 0;
   cursor: pointer;
   font-size: 1.6rem;
-  font-weight: 600;
   margin: 1rem 0;
   outline: 0;
   padding: 1.3rem 1vw;
@@ -1584,7 +1583,7 @@ textarea {
   }
   .container_formular_left,
   .container_formular_right {
-    width: 50%;
+    width: 45%;
   }
   .formular_dvojica {
     flex-direction: row;

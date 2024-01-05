@@ -1,4 +1,5 @@
 import AlmostEnd from "@/components/AlmostEnd";
+import ContactForm from "@/components/ContactForm";
 import Navbar from "@/components/Navbar";
 import Referencies from "@/components/Referencies";
 import { Metadata } from "next";
@@ -65,85 +66,7 @@ const page = () => {
               </div>
 
               <div className="container_formular_right">
-                <h2>Objednávkový formulár</h2>
-                <div className="label_input">
-                  <label>Vaše meno a priezvisko</label>
-                  <input
-                    type="text"
-                    name="meno_priezvisko"
-                    id="meno_priezvisko"
-                  />
-                </div>
-                <div className="formular_dvojica">
-                  <div className="label_input">
-                    <label>Váš telefónny kontakt</label>
-                    <input type="text" name="telefon" id="telefon" />
-                  </div>
-                  <div className="label_input">
-                    <label>Váš email</label>
-                    <input type="text" name="email" id="email" />
-                  </div>
-                </div>
-                <div className="formular_dvojica">
-                  <div className="label_input">
-                    <label>Druh kvasu</label>
-                    <select id="druh_kvasu">
-                      <option value="#">Kvas...</option>
-                      <option value="jablko">jablko</option>
-                      <option value="slivka">slivka</option>
-                      <option value="marhula">marhuľa</option>
-                      <option value="hruska">hruška</option>
-                      <option value="ceresna">čerešňa</option>
-                      <option value="baza">baza</option>
-                      <option value="jahoda">jahoda</option>
-                      <option value="malina">malina</option>
-                      <option value="cucoriedka">čučoriedka</option>
-                      <option value="ribezla">ríbezľa</option>
-                      <option value="hrozno">hrozno</option>
-                      <option value="sipka">šípka</option>
-                      <option value="trnka">trnka</option>
-                      <option value="vinovica">vínovica</option>
-                      <option value="broskyna">broskyňa</option>
-                      <option value="visna">višňa</option>
-                    </select>
-                  </div>
-                  <div className="label_input">
-                    <label>Koniec kvasenia</label>
-                    <input
-                      type="date"
-                      name="koniec_kvasenia"
-                      id="koniec_kvasenia"
-                    />
-                  </div>
-                </div>
-
-                <div className="label_input2">
-                  <label>Dodatočná poznámka</label>
-                  <textarea
-                    id="predstava"
-                    name="predstava"
-                    // rows="6"
-                    // cols="50"
-                  ></textarea>
-                </div>
-                <p>
-                  * Po odoslaní formulára sa s Vami spojí prevádzkovateľ
-                  pálenice, ktorý Vám navrhne najbližší vhodný termín pálenia.
-                </p>
-
-                <div className="checkbox_text">
-                  <input type="checkbox" id="scales" name="scales" />
-                  <label>
-                    Súhlasím so spracovaním osobných údajov,
-                    <a href="ochrana_udajov.html"> viac informácii tu.</a>
-                  </label>
-                </div>
-
-                <a className="btn btn--secondary" id="odoslat">
-                  <img src="/spinner.gif" id="spinner" alt="spinner" />
-                  <h4>ODOSLAŤ</h4>
-                </a>
-                <div id="error-message"></div>
+                <ContactForm />
               </div>
             </div>
           </div>
