@@ -15,18 +15,18 @@ const loading = () => {
         <div className="cesta">
           <Link href={`/`}>Domov</Link>
           <p className="cesta_sipka">&gt;</p>
-          <Skeleton count={1} width={100} />
+          <Skeleton count={1} width={100} baseColor="#fefefe" />
         </div>
       </div>
 
       <section className="sekcia">
         <div className="flexible_width">
           <div className="w-full mb-6">
-            <Skeleton count={1} height={40} />
+            <Skeleton count={1} height={40} baseColor="#fefefe" />
           </div>
           <div className="w-full">
-            <Skeleton count={5} />
-            <Skeleton height={500} />
+            <Skeleton count={5} baseColor="#fefefe" />
+            <Skeleton height={500} baseColor="#fefefe" />
           </div>
         </div>
       </section>

@@ -51,7 +51,7 @@ const AllArticles = ({ data }: Props) => {
                     height={350}
                     priority={true}
                   />
-                  <h3>{item.title}</h3>
+                  <h3 className="line-clamp-1">{item.title}</h3>
                   <div className="seda_07">
                     <PortableText value={item.content} />
                   </div>

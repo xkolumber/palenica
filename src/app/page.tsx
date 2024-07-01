@@ -11,6 +11,8 @@ import { client } from "./lib/sanity";
 import { Metadata } from "next";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Pálenica Spišská Belá",
   description:
@@ -142,5 +144,3 @@ export default async function Home() {
     </main>
   );
 }
-
-export const revalidate = 300;

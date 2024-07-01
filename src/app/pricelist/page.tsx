@@ -7,6 +7,8 @@ import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Cenník",
   description:
@@ -63,6 +65,5 @@ const page = async () => {
     </div>
   );
 };
-export const dynamic = "force-dynamic";
 
 export default page;

@@ -67,7 +67,6 @@ const ContactForm = () => {
             message: data.message,
           }),
         });
-
         if (response.ok) {
           reset();
           navigate.push(`/thanks`);
@@ -95,6 +94,7 @@ const ContactForm = () => {
           type="text"
           id="meno_priezvisko"
           {...register("meno_priezvisko")}
+          required
         />
         {errors.meno_priezvisko && (
           <p className="text-red-600">{errors.meno_priezvisko.message}</p>
@@ -103,14 +103,14 @@ const ContactForm = () => {
       <div className="formular_dvojica">
         <div className="label_input">
           <label>Váš telefónny kontakt</label>
-          <input type="text" id="telefon" {...register("telefon")} />
+          <input type="text" id="telefon" {...register("telefon")} required />
           {errors.telefon && (
             <p className="text-red-600">{errors.telefon.message}</p>
           )}
         </div>
         <div className="label_input">
           <label>Váš email</label>
-          <input type="text" id="email" {...register("email")} />
+          <input type="text" id="email" {...register("email")} required />
           {errors.email && (
             <p className="text-red-600">{errors.email.message}</p>
           )}
@@ -145,6 +145,7 @@ const ContactForm = () => {
             type="date"
             id="koniec_kvasenia"
             {...register("koniec_kvasenia")}
+            required
           />
         </div>
       </div>
@@ -164,7 +165,7 @@ const ContactForm = () => {
       </p>
 
       <div className="checkbox_text">
-        <input type="checkbox" id="checkbox" onChange={handleChange} />
+        <input type="checkbox" id="checkbox" onChange={handleChange} required />
         <label>
           <span className="ml-2">Súhlasím so spracovaním osobných údajov</span>,{" "}
           <Link href={"/data_protection"}>viac informácii tu.</Link>

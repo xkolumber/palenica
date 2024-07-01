@@ -5,6 +5,28 @@ import { client } from "../lib/sanity";
 import { Article } from "../lib/interface_article";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
+import { Metadata } from "next";
+import AllArticlesWithoutSwiper from "@/components/AllArticlesWithoutSwiper";
+
+export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Rady a nápady",
+  description:
+    "Prinášame vám rôzne tipy, aby naša spolupráca bola ešte kvalitnejšia. Nechajte sa inšpirovať našimi skúsenosťami.",
+  keywords: ["pálenica Spisšká Belá", "pálenica", "Spisšká Belá", "destilát"],
+  openGraph: {
+    title: "Rady a nápady",
+    description:
+      "Prinášame vám rôzne tipy, aby naša spolupráca bola ešte kvalitnejšia. Nechajte sa inšpirovať našimi skúsenosťami.",
+    images: [
+      {
+        url: "/skuska_new.jpg",
+        alt: "Pálenica",
+      },
+    ],
+  },
+};
 
 async function getAllData() {
   const query = `*[_type == "article"]`;
@@ -12,7 +34,7 @@ async function getAllData() {
   return data;
 }
 
-const page = async () => {
+const Page = async () => {
   const allData = (await getAllData()) as Article[];
   return (
     <>
@@ -38,8 +60,7 @@ const page = async () => {
               kvalitnejšia. Nechajte sa inšpirovať našimi skúsenosťami.
             </p>
           </div>
-
-          <AllArticles data={allData} />
+          <AllArticlesWithoutSwiper data={allData} />
         </div>
       </section>
 
@@ -48,6 +69,4 @@ const page = async () => {
   );
 };
 
-export const dynamic = "force-dynamic";
-
-export default page;
+export default Page;

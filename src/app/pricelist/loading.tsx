@@ -24,11 +24,11 @@ const loading = () => {
             <div className="logo__section__cennik">
               <img src="/logo.png" alt="logo" />
               <div className="w-full md:w-1/4 mb-6 mt-4">
-                <Skeleton count={1} height={40} />
+                <Skeleton count={1} height={40} baseColor="#fefefe" />
               </div>
             </div>
             <div className="w-full">
-              <Skeleton count={10} />
+              <Skeleton count={10} baseColor="#fefefe" />
             </div>
           </div>
         </section>

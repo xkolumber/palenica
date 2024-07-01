@@ -93,7 +93,7 @@ export const EmailContactPage = ({
               <p class="questions_q">Telefón: ${telefon}</p>
               <p class="questions_q">Email: ${email}</p>
               <p class="questions_q">Druh kvasu: ${druh_kvasu}</p>
-              <p class="koniec_kvasenia">Koniec kvasenia: ${koniec_kvasenia}</p>
+              <p class="questions_q">Koniec kvasenia: ${koniec_kvasenia}</p>
               <p class="questions_q">Správa: ${message}</p>
             </div>
           

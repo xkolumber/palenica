@@ -9,6 +9,8 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 const dynamicTitle = async (slug: string) => {
   const query = `*[_type == "actuality" && slug.current == "${slug}"][0].title`;
   const data = await client.fetch(query);
@@ -150,7 +152,5 @@ const Page = async ({ params }: { params: { slug: string } }) => {
     </>
   );
 };
-
-export const dynamic = "force-dynamic";
 
 export default Page;

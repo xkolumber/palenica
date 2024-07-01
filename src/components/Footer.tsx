@@ -41,7 +41,7 @@ const Footer = () => {
             </div>
           </div>
         </footer>
-        <div className="copyright">© 2023 Pálenica Spišská Belá</div>
+        <div className="copyright">© 2024 Pálenica Spišská Belá</div>
       </div>
     </>
   );

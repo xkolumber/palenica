@@ -30,43 +30,43 @@ const loading = () => {
             </p>
           </div>
 
-          <div className="md:hidden cierny_obdlznik w-full">
-            <Skeleton height={214} />
+          <div className="md:hidden cierny_obdlznik w-full  ">
+            <Skeleton height={214} baseColor="#fefefe" />
             <div className="mt-2 mb-4">
-              <Skeleton height={40} count={1} />
+              <Skeleton height={40} count={1} baseColor="#fefefe" />
             </div>
 
-            <Skeleton count={3} />
-            <Skeleton height={20} count={1} />
+            <Skeleton count={3} baseColor="#fefefe" />
+            <Skeleton height={20} count={1} baseColor="#fefefe" />
           </div>
 
           <div className="hidden w-full md:flex flex-col md:flex-row gap-8">
             <div className="flex  w-full cierny_obdlznik md:w-1/3">
-              <Skeleton height={214} />
+              <Skeleton height={214} baseColor="#fefefe" />
               <div className="mt-2 mb-4">
-                <Skeleton height={40} count={1} />
+                <Skeleton height={40} count={1} baseColor="#fefefe" />
               </div>
 
-              <Skeleton count={3} />
-              <Skeleton height={20} count={1} />
+              <Skeleton count={3} baseColor="#fefefe" />
+              <Skeleton height={20} count={1} baseColor="#fefefe" />
             </div>
             <div className="flex  w-full cierny_obdlznik md:w-1/3">
-              <Skeleton height={214} />
+              <Skeleton height={214} baseColor="#fefefe" />
               <div className="mt-2 mb-4">
-                <Skeleton height={40} count={1} />
+                <Skeleton height={40} count={1} baseColor="#fefefe" />
               </div>
 
-              <Skeleton count={3} />
-              <Skeleton height={20} count={1} />
+              <Skeleton count={3} baseColor="#fefefe" />
+              <Skeleton height={20} count={1} baseColor="#fefefe" />
             </div>
             <div className="flex  w-full cierny_obdlznik md:w-1/3">
-              <Skeleton height={214} />
+              <Skeleton height={214} baseColor="#fefefe" />
               <div className="mt-2 mb-4">
-                <Skeleton height={40} count={1} />
+                <Skeleton height={40} count={1} baseColor="#fefefe" />
               </div>
 
-              <Skeleton count={3} />
-              <Skeleton height={20} count={1} />
+              <Skeleton count={3} baseColor="#fefefe" />
+              <Skeleton height={20} count={1} baseColor="#fefefe" />
             </div>
           </div>
         </div>
