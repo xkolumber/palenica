@@ -161,6 +161,13 @@ const Page = async ({ params }: { params: { slug: string } }) => {
         </div>
         <h2 className="ine_napady">Iné nápady</h2>
         <AllArticles data={allData} />
+        <Link
+          href={"/advices_ideas"}
+          className="link-arrow -mt-16 sm:-mt-10 cursor-pointer z-20 relative"
+        >
+          {" "}
+          Všetky rady a nápady
+        </Link>
       </section>
 
       <AlmostEnd />
