@@ -2,6 +2,7 @@ import { Actuality } from "@/app/lib/interface_actuality";
 import Link from "next/link";
 import React from "react";
 import Navbar from "./Navbar";
+import ImagesLoop from "./ImagesLoop";
 
 interface Props {
   data: Actuality[];
@@ -10,15 +11,13 @@ interface Props {
 
 const HomePageIntro = ({ data, pdf }: Props) => {
   return (
-    <section className="text-white uvod">
-      <div className="background-image" />
-      {/* <div className="background-image2"></div> */}
+    <section className=" uvod relative">
+      <ImagesLoop />
       <div className="background-overlay"></div>
-      {/* <div className="background-overlay2"></div> */}
       <header className="addition">
         <Navbar />
       </header>
-      <div id="includedContent0"></div>
+
       <section className="uvod__centered">
         <h1 className="text-center">Vitajte v našej pálenici</h1>
         <p className="text-center">

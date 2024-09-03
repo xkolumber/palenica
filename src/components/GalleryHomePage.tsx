@@ -22,8 +22,8 @@ const GalleryHomePage = ({ gallery }: Props) => {
   };
   return (
     <div className="gallery">
-      {gallery.map((one_gallery) => (
-        <>
+      {gallery.map((one_gallery, index) => (
+        <div key={index}>
           <div
             className="gallery_obdlznik"
             key={one_gallery._id}
@@ -38,7 +38,7 @@ const GalleryHomePage = ({ gallery }: Props) => {
             />
             <p>{one_gallery.title}</p>
           </div>
-        </>
+        </div>
       ))}
       {selectedGallery && (
         <GalleryViewer

@@ -10,6 +10,7 @@ import { PriceList } from "./lib/interface_price_list";
 import { client } from "./lib/sanity";
 import { Metadata } from "next";
 import Link from "next/link";
+import getBase64 from "./lib/functionsServer";
 
 export const dynamic = "force-dynamic";
 

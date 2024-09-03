@@ -2,6 +2,7 @@ import { PriceList } from "@/app/lib/interface_price_list";
 import { client } from "@/app/lib/sanity";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 interface Props {
   data: PriceList;
@@ -26,25 +27,25 @@ const PriceListSection = async ({ data }: Props) => {
         <div className="oddiel">
           <div className="oddiel__clenenie">
             <div className="circle">
-              <img src="/fajka.svg" alt="" />
+              <Image src="/fajka.svg" alt="" width={40} height={40} priority />
             </div>
             <p>{data.price_service} € - Cena za službu</p>
           </div>
           <div className="oddiel__clenenie">
             <div className="circle">
-              <img src="/fajka.svg" alt="" />
+              <Image src="/fajka.svg" alt="" width={40} height={40} priority />
             </div>
             <p>{data.tax} € - Spotrebná daň</p>
           </div>
           <div className="oddiel__clenenie">
             <div className="circle">
-              <img src="/fajka.svg" alt="" />
+              <Image src="/fajka.svg" alt="" width={40} height={40} priority />
             </div>
             <p>Cena platná od {data.price_valid_from}</p>
           </div>
           <div className="oddiel__clenenie">
             <div className="circle">
-              <img src="/fajka.svg" alt="" />
+              <Image src="/fajka.svg" alt="" width={40} height={40} priority />
             </div>
             <p>V cene nutné náklady</p>
           </div>

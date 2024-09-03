@@ -155,6 +155,7 @@ const ContactForm = () => {
         <textarea
           id="predstava"
           {...register("message")}
+          placeholder="Uveďte množstvo kvasu..."
           // rows="6"
           // cols="50"
         ></textarea>
