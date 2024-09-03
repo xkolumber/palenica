@@ -72,9 +72,8 @@ const GroupPictures = ({ data, parameter }: Props) => {
               key={obrazok.asset._id}
               src={urlFor(obrazok.asset.url).url()}
               alt="Additional photo"
-              width={0}
-              height={0}
-              sizes="100vw"
+              width={400}
+              height={400}
               quality={100}
               className="theme_img"
             />

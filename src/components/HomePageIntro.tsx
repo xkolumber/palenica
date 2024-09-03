@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import Navbar from "./Navbar";
 import ImagesLoop from "./ImagesLoop";
+import Image from "next/image";
 
 interface Props {
   data: Actuality[];
@@ -26,7 +27,14 @@ const HomePageIntro = ({ data, pdf }: Props) => {
         <div className="btns-together">
           <Link href={"/reservation"} className="btn btn--secondary">
             {" "}
-            <img src="/fajka.svg" alt="" />
+            <Image
+              src="/fajka.svg"
+              alt="kniha"
+              width={50}
+              height={50}
+              className="w-8 h-8"
+              priority
+            />
             Objednať pálenie online
           </Link>
           <a href={pdf} className="btn btn--primary" target="_blank">
@@ -52,18 +60,39 @@ const HomePageIntro = ({ data, pdf }: Props) => {
 
         <div className="info__socials">
           <div className="img__text">
-            <img src="/biely_telefon.svg" alt="biely_telefon" />
+            <Image
+              src="/biely_telefon.svg"
+              alt="kniha"
+              width={50}
+              height={50}
+              priority
+            />
+
             <p>0919 210 930</p>
           </div>
           <div className="img__text">
-            <img src="/biely_mail.svg" alt="mail_icon" />
+            <Image
+              src="/biely_mail.svg"
+              alt="kniha"
+              width={50}
+              height={50}
+              priority
+            />
+
             <p>palenicaspisskabela@gmail.com</p>
           </div>
           <Link
             href={"https://www.facebook.com/palenicaspisskabela"}
             className="img__text"
           >
-            <img src="/biely_fb.svg" alt="biely_fb" />
+            <Image
+              src="/biely_fb.svg"
+              alt="kniha"
+              width={50}
+              height={50}
+              priority
+            />
+
             <p>Pálenica Spišská Belá</p>
           </Link>
         </div>

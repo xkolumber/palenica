@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import Image from "next/image";
 
 const loading = () => {
   return (
@@ -25,12 +26,25 @@ const loading = () => {
         <div className="sekcia_1024">
           <div className="info_clanok">
             <div className="cas">
-              <img src="/book.svg" alt="kniha" />
+              <Image
+                src="/book.svg"
+                alt="logo"
+                width={200}
+                height={200}
+                priority
+              />
+
               <p>čas čítania</p>
               <Skeleton count={1} width={30} />
             </div>
             <div className="publikacia">
-              <img src="/calendar.svg" alt="kniha" />
+              <Image
+                src="/calendar.svg"
+                alt="kniha"
+                width={200}
+                height={200}
+                priority
+              />
               <p>publikované</p>
               <Skeleton count={1} width={150} baseColor="#fefefe" />
             </div>

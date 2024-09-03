@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -7,14 +8,32 @@ const Footer = () => {
       <div className="black-bg">
         <footer className="footer">
           <div className="footer__first">
-            <img src="/logo.png" alt="logo" />
+            <Image
+              src="/logo.png"
+              alt="logo"
+              width={200}
+              height={200}
+              priority
+            />
             <div className="socials">
               <Link href={"https://www.facebook.com/palenicaspisskabela"}>
-                {" "}
-                <img src="/facebook.svg" alt="facebook" />
+                <Image
+                  src="/facebook.svg"
+                  alt="logo"
+                  width={200}
+                  height={200}
+                  priority
+                />{" "}
               </Link>
               <a href="tel:+421919210930">
-                <img src="/telephone.svg" alt="telephone" id="footer_mobile" />
+                <Image
+                  src="/telephone.svg"
+                  alt="logo"
+                  width={200}
+                  height={200}
+                  priority
+                  id="footer_mobile"
+                />
               </a>
             </div>
           </div>
@@ -28,15 +47,33 @@ const Footer = () => {
           <div className="footer__second">
             <h4>Kontakt</h4>
             <div className="img__text">
-              <img src="/telephone_2.svg" alt="mobile" />
+              <Image
+                src="/telephone_2.svg"
+                alt="logo"
+                width={100}
+                height={100}
+                priority
+              />{" "}
               <p>0919 210 930</p>
             </div>
             <div className="img__text">
-              <img src="/mail.svg" alt="mobile" />
+              <Image
+                src="/mail.svg"
+                alt="logo"
+                width={100}
+                height={100}
+                priority
+              />{" "}
               <p>palenicaspisskabela@gmail.com</p>
             </div>
             <div className="img__text">
-              <img src="/poloha.svg" alt="mobile" />
+              <Image
+                src="/poloha.svg"
+                alt="logo"
+                width={100}
+                height={100}
+                priority
+              />{" "}
               <p>Zimná 1165/75, 059 01 Spišská Belá</p>
             </div>
           </div>

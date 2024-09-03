@@ -1,12 +1,11 @@
-import AllArticles from "@/components/AllArticles";
-import AlmostEnd from "@/components/AlmostEnd";
-import React from "react";
-import { client } from "../lib/sanity";
-import { Article } from "../lib/interface_article";
-import Navbar from "@/components/Navbar";
-import Link from "next/link";
-import { Metadata } from "next";
 import AllArticlesWithoutSwiper from "@/components/AllArticlesWithoutSwiper";
+import AlmostEnd from "@/components/AlmostEnd";
+import Navbar from "@/components/Navbar";
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { Article } from "../lib/interface_article";
+import { client } from "../lib/sanity";
 
 export const dynamic = "force-dynamic";
 
@@ -53,7 +52,13 @@ const Page = async () => {
       <section className="sekcia">
         <div className="flexible_width">
           <div className="logo__section__rady">
-            <img src="/logo.png" alt="logo" />
+            <Image
+              src="/logo.png"
+              alt="logo"
+              width={200}
+              height={200}
+              priority
+            />
             <h2>Rady a nápady</h2>
             <p>
               Prinášame vám rôzne tipy, aby naša spolupráca bola ešte

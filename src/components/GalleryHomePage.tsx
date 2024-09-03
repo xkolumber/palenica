@@ -32,9 +32,9 @@ const GalleryHomePage = ({ gallery }: Props) => {
             <Image
               src={urlFor(one_gallery.title_photo).url()}
               alt="Additional photo"
-              width={0}
-              height={0}
-              sizes="100vw"
+              width={200}
+              height={200}
+              priority
             />
             <p>{one_gallery.title}</p>
           </div>

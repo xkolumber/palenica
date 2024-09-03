@@ -92,11 +92,13 @@ const Page = async ({ params }: { params: { slug: string } }) => {
             <Image
               src={urlFor(value).url()}
               alt="image"
-              width={0}
-              height={0}
-              sizes="100vw"
+              width={1920}
+              height={1080}
+              priority
               quality={100}
               className="article_img_one_photo"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAEklEQVR4nGP48OHDf2TMQLoAABc0PPGQ/86sAAAAAElFTkSuQmCC"
             />
           );
         }
@@ -122,7 +124,6 @@ const Page = async ({ params }: { params: { slug: string } }) => {
       <section className="sekcia">
         <div className="flexible_width">
           <div className="logo__section__cennik">
-            {/* <img src="/logo.png" alt="logo" /> */}
             <h2>{data.title}</h2>
           </div>
           <PortableText
@@ -138,11 +139,13 @@ const Page = async ({ params }: { params: { slug: string } }) => {
             <Image
               src={urlFor(data.one_photo).url()}
               alt="Additional photo"
-              width={0}
-              height={0}
-              sizes="100vw"
+              width={1920}
+              height={1080}
               quality={100}
+              priority
               className="article_img_one_photo"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAEklEQVR4nGP48OHDf2TMQLoAABc0PPGQ/86sAAAAAElFTkSuQmCC"
             />
           )}
         </div>

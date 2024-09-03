@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Gallery } from "../lib/interface_gallery";
 import { client } from "../lib/sanity";
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Galéria",
@@ -47,7 +48,14 @@ const page = async () => {
       </div>
       <section className="sekcia__main">
         <div className="logo__section">
-          <img src="/logo.png" alt="logo" />
+          <Image
+            src="/logo.png"
+            alt="kniha"
+            width={200}
+            height={200}
+            priority
+          />
+
           <h2>Galéria</h2>
           <p>
             Zdokumentované momenty nám pripomínajú dôležitosť a krásu pálenia

@@ -47,7 +47,13 @@ const GalleryViewer = ({ photos, handleClose, created_at }: Props) => {
         <div className="uvod_pasik_left">
           <div className="uvod_pasik_circle">
             {" "}
-            <img src="/logo.png" alt="" />
+            <Image
+              src="/logo.png"
+              alt="logo"
+              width={200}
+              height={200}
+              priority
+            />
           </div>
           <div className="flex flex-col">
             <div className="uvod_pasik_meno">Marek Olekšák</div>
@@ -66,9 +72,9 @@ const GalleryViewer = ({ photos, handleClose, created_at }: Props) => {
             <Image
               src={urlFor(photos[currentPhotoIndex].image.asset._ref).url()}
               alt="Additional photo"
-              width={0}
-              height={0}
-              sizes="100vw"
+              width={1920}
+              height={1080}
+              priority
               onLoad={() => setIsLoaded(true)}
             />
           </div>

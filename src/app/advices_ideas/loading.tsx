@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import Image from "next/image";
 
 const loading = () => {
   return (
@@ -22,7 +23,13 @@ const loading = () => {
       <section className="sekcia">
         <div className="flexible_width">
           <div className="logo__section__rady">
-            <img src="/logo.png" alt="logo" />
+            <Image
+              src="/logo.png"
+              alt="logo"
+              width={200}
+              height={200}
+              priority
+            />
             <h2>Rady a nápady</h2>
             <p>
               Prinášame vám rôzne tipy, aby naša spolupráca bola ešte

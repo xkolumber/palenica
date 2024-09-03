@@ -10,7 +10,7 @@ import { PriceList } from "./lib/interface_price_list";
 import { client } from "./lib/sanity";
 import { Metadata } from "next";
 import Link from "next/link";
-import getBase64 from "./lib/functionsServer";
+import Image from "next/image";
 
 export const dynamic = "force-dynamic";
 
@@ -81,7 +81,7 @@ export default async function Home() {
       <HomePageIntro data={data} pdf={pdf} />
       <div className="strip" id="nase_sluzby_container">
         <div className="logo__section">
-          <img src="/logo.png" alt="logo" />
+          <Image src="/logo.png" alt="logo" width={200} height={200} priority />
           <h2>Naše služby</h2>
         </div>
       </div>
@@ -112,7 +112,7 @@ export default async function Home() {
 
       <section className="sekcia__main">
         <div className="logo__section">
-          <img src="/logo.png" alt="logo" />
+          <Image src="/logo.png" alt="logo" width={200} height={200} priority />
           <h2>Rady a nápady</h2>
           <p>
             Prinášame vám rôzne tipy, aby naša spolupráca bola ešte
@@ -131,7 +131,7 @@ export default async function Home() {
 
       <section className="sekcia__main" id="gallery_container">
         <div className="logo__section">
-          <img src="/logo.png" alt="logo" />
+          <Image src="/logo.png" alt="logo" width={200} height={200} priority />
           <h2>Galéria</h2>
           <p>
             Zdokumentované momenty nám pripomínajú dôležitosť a krásu pálenia

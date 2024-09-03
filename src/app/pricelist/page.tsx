@@ -6,6 +6,7 @@ import { PriceList } from "../lib/interface_price_list";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const dynamic = "force-dynamic";
 
@@ -55,7 +56,13 @@ const page = async () => {
       <section className="sekcia">
         <div className="flexible_width">
           <div className="logo__section__cennik">
-            <img src="/logo.png" alt="logo" />
+            <Image
+              src="/logo.png"
+              alt="logo"
+              width={200}
+              height={200}
+              priority
+            />
             <h2>{data.title}</h2>
           </div>
           <PortableText value={data.content} />

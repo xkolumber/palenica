@@ -89,11 +89,12 @@ const Page = async ({ params }: { params: { slug: string } }) => {
             <Image
               src={urlFor(value).url()}
               alt="image"
-              width={0}
-              height={0}
-              sizes="100vw"
+              width={1920}
+              height={1080}
               quality={100}
               className="article_img_one_photo"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAEklEQVR4nGP48OHDf2TMQLoAABc0PPGQ/86sAAAAAElFTkSuQmCC"
             />
           );
         }
@@ -122,12 +123,26 @@ const Page = async ({ params }: { params: { slug: string } }) => {
         <div className="sekcia_1024">
           <div className="info_clanok">
             <div className="cas">
-              <img src="/book.svg" alt="kniha" />
+              <Image
+                src="/book.svg"
+                alt="logo"
+                width={200}
+                height={200}
+                className="w-12 h-12"
+                priority
+              />
               <p>čas čítania</p>
               <h5>{data.time_reading} min</h5>
             </div>
             <div className="publikacia">
-              <img src="/calendar.svg" alt="kniha" />
+              <Image
+                src="/calendar.svg"
+                alt="kniha"
+                width={200}
+                height={200}
+                className="w-12 h-12"
+                priority
+              />
               <p>publikované</p>
               <h5>{formattedDate}</h5>
             </div>
@@ -142,6 +157,8 @@ const Page = async ({ params }: { params: { slug: string } }) => {
               alt="Obrázok ovocia"
               width={1000}
               height={340}
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAEklEQVR4nGP48OHDf2TMQLoAABc0PPGQ/86sAAAAAElFTkSuQmCC"
             />
 
             <div className="cierny_container_zbytok">

@@ -14,7 +14,7 @@ const Navbar = () => {
     <nav className="nav collapsible ">
       <Link href={`/`} className="nav__brand">
         {" "}
-        <img src="/logo.png" alt="logo palenice" />{" "}
+        <Image src="/logo.png" alt="logo" width={200} height={200} priority />
       </Link>
 
       <span>

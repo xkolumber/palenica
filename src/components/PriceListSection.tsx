@@ -11,7 +11,8 @@ const PriceListSection = async ({ data }: Props) => {
   return (
     <section className="sekcia__main">
       <div className="logo__section">
-        <img src="/logo.png" alt="logo" />
+        <Image src="/logo.png" alt="logo" width={200} height={200} priority />
+
         <h2>Cenník</h2>
         <p>
           Cena za spotrebnú daň z liehu vzrástla o 30%. Z tohto dôvodu sme

@@ -5,6 +5,7 @@ import Referencies from "@/components/Referencies";
 import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Formulár",

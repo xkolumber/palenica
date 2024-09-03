@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import Image from "next/image";
 
 import "swiper/css/autoplay";
 
@@ -22,7 +23,14 @@ const Referencies = () => {
       <SwiperSlide key={1}>
         <p>Hruškovica bola vynikajúca. Ďakujem Marekovi za pomoc.</p>
         <div className="referencie_box">
-          <img src="/marian_halcin.jpg" alt="foto" />
+          <Image
+            src="/marian_halcin.jpg"
+            alt="logo"
+            width={200}
+            height={200}
+            priority
+          />
+
           <div className="meno_povolanie">
             <b>Marián Halčin</b>
             <p>Kuchár</p>
@@ -32,7 +40,14 @@ const Referencies = () => {
       <SwiperSlide key={2}>
         <p>Marhuľovica bola podľa mojich predstáv. Odporúčam.</p>
         <div className="referencie_box">
-          <img src="/martin.jpg" alt="foto" />
+          <Image
+            src="/martin.jpg"
+            alt="logo"
+            width={200}
+            height={200}
+            priority
+          />
+
           <div className="meno_povolanie">
             <b>Martin Kovalčík</b>
             <p>Živnostník</p>
@@ -42,7 +57,13 @@ const Referencies = () => {
       <SwiperSlide key={3}>
         <p>Oceňujem prístup a odbornosť. Skvelá spolupráca.</p>
         <div className="referencie_box">
-          <img src="/lubos.jpg" alt="foto" />
+          <Image
+            src="/lubos.jpg"
+            alt="logo"
+            width={200}
+            height={200}
+            priority
+          />
           <div className="meno_povolanie">
             <b>Ľuboš Kolumber</b>
             <p>Živnostník</p>
