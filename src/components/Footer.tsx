@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 const Footer = () => {
+  const actual_year = new Date().getFullYear();
   return (
     <>
       <div className="black-bg">
@@ -78,7 +79,7 @@ const Footer = () => {
             </div>
           </div>
         </footer>
-        <div className="copyright">© 2024 Pálenica Spišská Belá</div>
+        <div className="copyright">© {actual_year} Pálenica Spišská Belá</div>
       </div>
     </>
   );
