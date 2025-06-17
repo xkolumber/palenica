@@ -53,6 +53,15 @@ a {
   line-height: 1.55;
 }
 
+.sekcia_skeleton {
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem;
+  color: var(--color-secondary);
+  align-items: center;
+}
+
 .sekcia,
 .sekcia__main {
   background-color: var(--color-primary);

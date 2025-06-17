@@ -41,6 +41,9 @@ const Navbar = () => {
         <Link href={"/gallery"} className="nav__item">
           Galéria
         </Link>
+        <Link href={"/advices_ideas"} className="nav__item">
+          Rady a nápady
+        </Link>
       </ul>
       {closeClicked && <div className="behind_card_background"></div>}
       <div
@@ -87,6 +90,14 @@ const Navbar = () => {
           onClick={() => clickedButtonClose()}
         >
           Galéria
+        </Link>
+
+        <Link
+          href={"/advices_ideas"}
+          className="nav__item"
+          onClick={() => clickedButtonClose()}
+        >
+          Rady a nápady
         </Link>
 
         <Link

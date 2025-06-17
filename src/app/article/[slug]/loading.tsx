@@ -31,6 +31,7 @@ const loading = () => {
                 alt="logo"
                 width={200}
                 height={200}
+                className="w-12 h-12"
                 priority
               />
 
@@ -43,6 +44,7 @@ const loading = () => {
                 alt="kniha"
                 width={200}
                 height={200}
+                className="w-12 h-12"
                 priority
               />
               <p>publikované</p>

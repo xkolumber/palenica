@@ -47,26 +47,30 @@ const Footer = () => {
           </div>
           <div className="footer__second">
             <h4>Kontakt</h4>
-            <div className="img__text">
-              <Image
-                src="/telephone_2.svg"
-                alt="logo"
-                width={100}
-                height={100}
-                priority
-              />{" "}
-              <p>0919 210 930</p>
-            </div>
-            <div className="img__text">
-              <Image
-                src="/mail.svg"
-                alt="logo"
-                width={100}
-                height={100}
-                priority
-              />{" "}
-              <p>palenicaspisskabela@gmail.com</p>
-            </div>
+            <a href="tel:+421919210930">
+              <div className="img__text">
+                <Image
+                  src="/telephone_2.svg"
+                  alt="logo"
+                  width={100}
+                  height={100}
+                  priority
+                />{" "}
+                <p>0919 210 930</p>
+              </div>
+            </a>
+            <a href="mailto:palenicaspisskabela@gmail.com">
+              <div className="img__text">
+                <Image
+                  src="/mail.svg"
+                  alt="logo"
+                  width={100}
+                  height={100}
+                  priority
+                />{" "}
+                <p>palenicaspisskabela@gmail.com</p>
+              </div>
+            </a>
             <div className="img__text">
               <Image
                 src="/poloha.svg"

@@ -47,34 +47,17 @@ const loading = () => {
             <Skeleton height={20} count={1} baseColor="#fefefe" />
           </div>
 
-          <div className="hidden w-full md:flex flex-col md:flex-row gap-8">
-            <div className="flex  w-full cierny_obdlznik md:w-1/3">
-              <Skeleton height={214} baseColor="#fefefe" />
-              <div className="mt-2 mb-4">
-                <Skeleton height={40} count={1} baseColor="#fefefe" />
+          <div className="md:grid grid-cols-1 hidden md:grid-cols-3 gap-8 w-full">
+            {Array.from({ length: 9 }).map((_, idx) => (
+              <div key={idx} className="cierny_obdlznik">
+                <Skeleton height={214} baseColor="#fefefe" />
+                <div className="mt-2 mb-4">
+                  <Skeleton height={40} count={1} baseColor="#fefefe" />
+                </div>
+                <Skeleton count={3} baseColor="#fefefe" />
+                <Skeleton height={20} count={1} baseColor="#fefefe" />
               </div>
-
-              <Skeleton count={3} baseColor="#fefefe" />
-              <Skeleton height={20} count={1} baseColor="#fefefe" />
-            </div>
-            <div className="flex  w-full cierny_obdlznik md:w-1/3">
-              <Skeleton height={214} baseColor="#fefefe" />
-              <div className="mt-2 mb-4">
-                <Skeleton height={40} count={1} baseColor="#fefefe" />
-              </div>
-
-              <Skeleton count={3} baseColor="#fefefe" />
-              <Skeleton height={20} count={1} baseColor="#fefefe" />
-            </div>
-            <div className="flex  w-full cierny_obdlznik md:w-1/3">
-              <Skeleton height={214} baseColor="#fefefe" />
-              <div className="mt-2 mb-4">
-                <Skeleton height={40} count={1} baseColor="#fefefe" />
-              </div>
-
-              <Skeleton count={3} baseColor="#fefefe" />
-              <Skeleton height={20} count={1} baseColor="#fefefe" />
-            </div>
+            ))}
           </div>
         </div>
       </section>

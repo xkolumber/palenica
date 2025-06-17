@@ -59,28 +59,32 @@ const HomePageIntro = ({ data, pdf }: Props) => {
         </div>
 
         <div className="info__socials">
-          <div className="img__text">
-            <Image
-              src="/biely_telefon.svg"
-              alt="kniha"
-              width={50}
-              height={50}
-              priority
-            />
+          <a href="tel:+421919210930">
+            <div className="img__text">
+              <Image
+                src="/biely_telefon.svg"
+                alt="kniha"
+                width={50}
+                height={50}
+                priority
+              />
 
-            <p>0919 210 930</p>
-          </div>
-          <div className="img__text">
-            <Image
-              src="/biely_mail.svg"
-              alt="kniha"
-              width={50}
-              height={50}
-              priority
-            />
+              <p>0919 210 930</p>
+            </div>
+          </a>
+          <a href="mailto:palenicaspisskabela@gmail.com">
+            <div className="img__text">
+              <Image
+                src="/biely_mail.svg"
+                alt="kniha"
+                width={50}
+                height={50}
+                priority
+              />
 
-            <p>palenicaspisskabela@gmail.com</p>
-          </div>
+              <p>palenicaspisskabela@gmail.com</p>
+            </div>
+          </a>
           <Link
             href={"https://www.facebook.com/palenicaspisskabela"}
             className="img__text"

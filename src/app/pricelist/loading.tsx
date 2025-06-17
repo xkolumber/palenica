@@ -1,15 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import React from "react";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
+
 import Image from "next/image";
+import { ClipLoader } from "react-spinners";
 
 const loading = () => {
   return (
     <>
       <div>
-        <div className="cerveny_container">
+        <div className="cerveny_container ">
           <div className="addition__add">
             <Navbar />
           </div>
@@ -20,7 +20,7 @@ const loading = () => {
           </div>
         </div>
 
-        <section className="sekcia">
+        <section className="sekcia_skeleton min-h-screen">
           <div className="flexible_width">
             <div className="logo__section__cennik">
               <Image
@@ -30,12 +30,10 @@ const loading = () => {
                 height={200}
                 priority
               />
-              <div className="w-full md:w-1/4 mb-6 mt-4">
-                <Skeleton count={1} height={40} baseColor="#fefefe" />
-              </div>
+              <h2>Cenník</h2>
             </div>
-            <div className="w-full">
-              <Skeleton count={10} baseColor="#fefefe" />
+            <div className="mt-4">
+              <ClipLoader size={30} color={"#ffffff"} loading={true} />
             </div>
           </div>
         </section>

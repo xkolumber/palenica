@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { ClipLoader } from "react-spinners";
 
 const loading = () => {
   return (
@@ -19,15 +20,9 @@ const loading = () => {
         </div>
       </div>
 
-      <section className="sekcia">
-        <div className="flexible_width">
-          <div className="w-full mb-6">
-            <Skeleton count={1} height={40} baseColor="#fefefe" />
-          </div>
-          <div className="w-full">
-            <Skeleton count={5} baseColor="#fefefe" />
-            <Skeleton height={500} baseColor="#fefefe" />
-          </div>
+      <section className="sekcia_skeleton min-h-screen">
+        <div className="flexible_width mt-8">
+          <ClipLoader size={30} color={"#ffffff"} loading={true} />
         </div>
       </section>
     </>
