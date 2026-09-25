@@ -70,7 +70,7 @@ const page = () => {
                 <ContactForm />
               </div>
             </div> */}
-            <Image src="/oznam.jpg" alt="Formulár 2" width={500} height={300} />
+            <Image src="/oznam.jpg" alt="Formulár 3" width={500} height={300} />
           </div>
         </section>
         {/* <AlmostEnd /> */}
