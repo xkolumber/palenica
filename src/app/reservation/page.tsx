@@ -41,8 +41,8 @@ const page = () => {
         </div>
 
         <section className="sekcia">
-          <div className="flexible_width">
-            <div className="container_sekcia">
+          <div className="centered_object">
+            {/* <div className="container_sekcia">
               <div className="container_formular_left">
                 <div className="flex flex-row justify-between">
                   <img src="/hviezdy_lava.svg" alt="hviezdy_lava" />
@@ -69,10 +69,12 @@ const page = () => {
               <div className="container_formular_right">
                 <ContactForm />
               </div>
-            </div>
+            </div> */}
+
+            <Image src="/oznam.jpg" alt="Formulár" width={500} height={300} />
           </div>
         </section>
-        <AlmostEnd />
+        {/* <AlmostEnd /> */}
       </div>
     </>
   );
